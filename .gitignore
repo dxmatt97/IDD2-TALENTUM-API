@@ -1,0 +1,22 @@
+# Entornos virtuales
+venv/
+.env/
+
+# Compilados de Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Archivos de VS Code
+.vscode/
+
+# Archivos de logs y caché
+*.log
+*.sqlite3
+*.db
+*.bak
+.DS_Store
+.env
+
+# Otros
+*.swp

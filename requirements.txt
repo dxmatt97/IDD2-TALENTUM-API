@@ -1,0 +1,7 @@
+pandas
+matplotlib
+networkx
+pymongo
+neo4j
+redis
+ace_tools 
