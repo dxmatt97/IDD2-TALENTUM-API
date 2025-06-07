@@ -44,7 +44,7 @@ with driver.session() as session:
         session.run(
             "CREATE (c:Candidato {id: $id, nombre: $nombre, experiencia: $experiencia, skills_tecnicos: $skills_tecnicos, skills_soft: $skills_soft})",
             id=c["id"], nombre=c["nombre"], experiencia=c["experiencia"],
-            skills_tecnicos=c["skills"]["tecnicos"], skills_soft=c["skills"]["soft"]
+            skills_tecnicos=c["skills_tecnicos"], skills_soft=c["skills_soft"]
         )
 
     # Crear nodos de cursos
@@ -61,7 +61,7 @@ with driver.session() as session:
         )
         session.run(
             "CREATE (b:Busqueda {id: $id, requisitos_skills: $skills, requisitos_experiencia: $experiencia, fecha: $fecha})",
-            id=b["id"], skills=b["requisitos"]["skills"], experiencia=b["requisitos"]["experiencia"], fecha=b["fecha_publicacion"]
+            id=b["id"], skills=b["requisitos_skills"], experiencia=b["requisitos_experiencia"], fecha=b["fecha_publicacion"]
         )
         session.run(
             "MATCH (e:Empresa {nombre: $empresa}), (b:Busqueda {id: $id}) "

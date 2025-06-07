@@ -1,0 +1,262 @@
+[
+  {
+    "id": "busq_000",
+    "empresa": "ByteForge",
+    "puesto": "Desarrollador Backend",
+    "requisitos_skills": [
+      "Python",
+      "Node.js",
+      "C#",
+      "Kubernetes"
+    ],
+    "requisitos_experiencia": "Frontend",
+    "seniority_requerido": "Junior Avanzado",
+    "fecha_publicacion": "2025-05-04"
+  },
+  {
+    "id": "busq_001",
+    "empresa": "SoftWorks",
+    "puesto": "Data Scientist",
+    "requisitos_skills": [
+      "Terraform",
+      "MongoDB",
+      "Java"
+    ],
+    "requisitos_experiencia": "Cloud Engineering",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-10"
+  },
+  {
+    "id": "busq_002",
+    "empresa": "NextGenApps",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "Node.js",
+      "FastAPI",
+      "PostgreSQL",
+      "TypeScript"
+    ],
+    "requisitos_experiencia": "Cloud Engineering",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-15"
+  },
+  {
+    "id": "busq_003",
+    "empresa": "InnovaSoft",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "Docker",
+      "AWS"
+    ],
+    "requisitos_experiencia": "Cybersecurity",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-06"
+  },
+  {
+    "id": "busq_004",
+    "empresa": "SmartSystems",
+    "puesto": "Project Manager",
+    "requisitos_skills": [
+      "C#",
+      "MongoDB",
+      "Python"
+    ],
+    "requisitos_experiencia": "QA Automation",
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-05-29"
+  },
+  {
+    "id": "busq_005",
+    "empresa": "CodeFactory",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "C#",
+      "Go",
+      "React",
+      "Python"
+    ],
+    "requisitos_experiencia": "Backend",
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-04-23"
+  },
+  {
+    "id": "busq_006",
+    "empresa": "SmartSystems",
+    "puesto": "Cloud Architect",
+    "requisitos_skills": [
+      "C#",
+      "Java"
+    ],
+    "requisitos_experiencia": "Backend",
+    "seniority_requerido": "Junior",
+    "fecha_publicacion": "2025-04-30"
+  },
+  {
+    "id": "busq_007",
+    "empresa": "NextGenApps",
+    "puesto": "Cloud Architect",
+    "requisitos_skills": [
+      "Go",
+      "Docker",
+      "Java"
+    ],
+    "requisitos_experiencia": "DevOps",
+    "seniority_requerido": "Junior Avanzado",
+    "fecha_publicacion": "2025-05-03"
+  },
+  {
+    "id": "busq_008",
+    "empresa": "NextGenApps",
+    "puesto": "Project Manager",
+    "requisitos_skills": [
+      "TypeScript",
+      "Node.js"
+    ],
+    "requisitos_experiencia": "Data Science",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-04-13"
+  },
+  {
+    "id": "busq_009",
+    "empresa": "InnovaSoft",
+    "puesto": "Data Scientist",
+    "requisitos_skills": [
+      "Go",
+      "Node.js"
+    ],
+    "requisitos_experiencia": "Backend",
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-05-21"
+  },
+  {
+    "id": "busq_010",
+    "empresa": "CodeFactory",
+    "puesto": "Project Manager",
+    "requisitos_skills": [
+      "Python",
+      "Docker",
+      "SQL"
+    ],
+    "requisitos_experiencia": "Frontend",
+    "seniority_requerido": "Junior",
+    "fecha_publicacion": "2025-04-27"
+  },
+  {
+    "id": "busq_011",
+    "empresa": "DataCorp",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "MongoDB",
+      "FastAPI"
+    ],
+    "requisitos_experiencia": "Backend",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-06-05"
+  },
+  {
+    "id": "busq_012",
+    "empresa": "NextGenApps",
+    "puesto": "DevOps Engineer",
+    "requisitos_skills": [
+      "Node.js",
+      "MongoDB"
+    ],
+    "requisitos_experiencia": "Cloud Engineering",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-04"
+  },
+  {
+    "id": "busq_013",
+    "empresa": "DataDriven",
+    "puesto": "Cloud Architect",
+    "requisitos_skills": [
+      "FastAPI",
+      "Terraform",
+      "MongoDB",
+      "Go"
+    ],
+    "requisitos_experiencia": "QA Automation",
+    "seniority_requerido": "Junior",
+    "fecha_publicacion": "2025-06-01"
+  },
+  {
+    "id": "busq_014",
+    "empresa": "SoftWorks",
+    "puesto": "Cloud Architect",
+    "requisitos_skills": [
+      "MongoDB",
+      "Terraform",
+      "Kubernetes",
+      "Python"
+    ],
+    "requisitos_experiencia": "Data Science",
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-05-17"
+  },
+  {
+    "id": "busq_015",
+    "empresa": "AgileInnovations",
+    "puesto": "Project Manager",
+    "requisitos_skills": [
+      "Java",
+      "Kubernetes",
+      "Terraform",
+      "Docker"
+    ],
+    "requisitos_experiencia": "Mobile",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-04-16"
+  },
+  {
+    "id": "busq_016",
+    "empresa": "DataDriven",
+    "puesto": "DevOps Engineer",
+    "requisitos_skills": [
+      "C#",
+      "SQL",
+      "TypeScript",
+      "Python"
+    ],
+    "requisitos_experiencia": "Frontend",
+    "seniority_requerido": "Junior Avanzado",
+    "fecha_publicacion": "2025-04-11"
+  },
+  {
+    "id": "busq_017",
+    "empresa": "ByteForge",
+    "puesto": "Data Scientist",
+    "requisitos_skills": [
+      "JavaScript",
+      "SQL",
+      "Docker"
+    ],
+    "requisitos_experiencia": "Cloud Engineering",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-23"
+  },
+  {
+    "id": "busq_018",
+    "empresa": "QuantumLeap",
+    "puesto": "Project Manager",
+    "requisitos_skills": [
+      "Java",
+      "Kubernetes"
+    ],
+    "requisitos_experiencia": "Mobile",
+    "seniority_requerido": "Junior",
+    "fecha_publicacion": "2025-05-07"
+  },
+  {
+    "id": "busq_019",
+    "empresa": "SoftWorks",
+    "puesto": "Project Manager",
+    "requisitos_skills": [
+      "Node.js",
+      "Go",
+      "JavaScript"
+    ],
+    "requisitos_experiencia": "Cybersecurity",
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-04-11"
+  }
+]

@@ -1,42 +1,80 @@
 from pymongo import MongoClient
-from models.documental import generar_candidatos, generar_cursos, generar_busquedas
+from decouple import config
+import sys
+import os
+import json
 
-# Conexión a MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+# Agrega el directorio raíz del proyecto al sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from models.documental import generar_candidatos, generar_cursos, generar_busquedas, generar_procesos_seleccion_documental
+
+# --- Configuración de la Conexión ---
+MONGO_URI = config("MONGO_URI", default="mongodb://localhost:27017/")
+client = MongoClient(MONGO_URI)
 db = client["talentum_demo"]
 
-# Colecciones
-candidatos_col = db["candidatos"]
-cursos_col = db["cursos"]
-busquedas_col = db["busquedas"]
+def poblar_mongodb():
+    """
+    Limpia y puebla las colecciones, devolviendo un log estructurado.
+    """
+    logs = {"pasos": [], "summary": {}}
+    
+    # --- Limpieza de Colecciones ---
+    colecciones = ["candidatos", "cursos", "busquedas", "procesos_seleccion"]
+    for col in colecciones:
+        db[col].delete_many({})
+        logs["pasos"].append({"paso": f"Limpieza de colección '{col}'", "status": "completado"})
 
-# Limpia las colecciones (opcional, para evitar duplicados en pruebas)
-candidatos_col.delete_many({})
-cursos_col.delete_many({})
-busquedas_col.delete_many({})
+    # --- Generación de Datos ---
+    candidatos = generar_candidatos(50)
+    cursos = generar_cursos(15)
+    busquedas = generar_busquedas(20)
+    procesos = generar_procesos_seleccion_documental(50)
+    logs["pasos"].append({"paso": "Generación de datos de prueba", "status": "completado"})
 
-# Genera datos de ejemplo
-datos_candidatos = generar_candidatos(10)
-datos_cursos = generar_cursos(5)
-datos_busquedas = generar_busquedas(5)
+    # --- Guardar datos generados a archivos JSON ---
+    data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data')
+    os.makedirs(data_dir, exist_ok=True)
+    
+    with open(os.path.join(data_dir, 'candidatos.json'), 'w', encoding='utf-8') as f:
+        json.dump(candidatos, f, ensure_ascii=False, indent=2)
+    with open(os.path.join(data_dir, 'cursos.json'), 'w', encoding='utf-8') as f:
+        json.dump(cursos, f, ensure_ascii=False, indent=2)
+    with open(os.path.join(data_dir, 'busquedas.json'), 'w', encoding='utf-8') as f:
+        json.dump(busquedas, f, ensure_ascii=False, indent=2)
+    logs["pasos"].append({"paso": "Guardado de datos en archivos JSON", "status": "completado"})
 
-# Inserta los datos en MongoDB
-candidatos_col.insert_many(datos_candidatos)
-cursos_col.insert_many(datos_cursos)
-busquedas_col.insert_many(datos_busquedas)
+    # --- Inserción de Datos ---
+    db.candidatos.insert_many(candidatos)
+    logs["pasos"].append({"paso": "Inserción en 'candidatos'", "documentos": len(candidatos)})
+    
+    db.cursos.insert_many(cursos)
+    logs["pasos"].append({"paso": "Inserción en 'cursos'", "documentos": len(cursos)})
 
-# Consulta de ejemplo: mostrar todos los candidatos con 'Python' como skill técnico
-result = list(candidatos_col.find({"skills.tecnicos": "Python"}))
-print("Candidatos con skill Python:")
-for cand in result:
-    print(f"- {cand['nombre']} ({cand['id']})")
+    db.busquedas.insert_many(busquedas)
+    logs["pasos"].append({"paso": "Inserción en 'busquedas'", "documentos": len(busquedas)})
 
-# Consulta de ejemplo: mostrar todos los cursos
-print("\nCursos:")
-for curso in cursos_col.find():
-    print(f"- {curso['titulo']} ({curso['tipo']})")
+    db.procesos_seleccion.insert_many(procesos)
+    logs["pasos"].append({"paso": "Inserción en 'procesos_seleccion'", "documentos": len(procesos)})
 
-# Consulta de ejemplo: mostrar todas las búsquedas
-print("\nBúsquedas:")
-for busq in busquedas_col.find():
-    print(f"- {busq['empresa']} busca {busq['requisitos']}") 
+    # --- Resumen ---
+    logs["summary"] = {
+        "candidatos": len(candidatos),
+        "cursos": len(cursos),
+        "busquedas": len(busquedas),
+        "procesos_seleccion": len(procesos),
+        "total_documentos": len(candidatos) + len(cursos) + len(busquedas) + len(procesos)
+    }
+    
+    return logs
+
+if __name__ == "__main__":
+    try:
+        resultado = poblar_mongodb()
+        # Imprime el JSON a stdout para que el subprocess lo pueda capturar
+        print(json.dumps(resultado, indent=2))
+    except Exception as e:
+        error_msg = {"error": True, "message": str(e)}
+        print(json.dumps(error_msg, indent=2))
+        sys.exit(1) 

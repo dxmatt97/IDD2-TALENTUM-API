@@ -1,0 +1,1073 @@
+[
+  {
+    "id": "cand_000",
+    "nombre": "Daniel Vega",
+    "experiencia": [
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "Python",
+      "PostgreSQL"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Resolución de problemas"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_001",
+    "nombre": "Clara Moreno",
+    "experiencia": [
+      "Mobile",
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "Go",
+      "MongoDB",
+      "JavaScript",
+      "Docker",
+      "Node.js"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Comunicación"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_002",
+    "nombre": "Martín Torres",
+    "experiencia": [
+      "Cybersecurity",
+      "Frontend",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "C#",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Trabajo en equipo"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_003",
+    "nombre": "Clara Moreno",
+    "experiencia": [
+      "Cybersecurity",
+      "DevOps",
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "PostgreSQL",
+      "Kubernetes",
+      "C#"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Resolución de problemas"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_004",
+    "nombre": "Miguel González",
+    "experiencia": [
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "Docker",
+      "PostgreSQL",
+      "React",
+      "Python"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Trabajo en equipo"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_005",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "DevOps",
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "Terraform",
+      "JavaScript",
+      "React",
+      "Java",
+      "MongoDB"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Comunicación"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_006",
+    "nombre": "Marcos Alonso",
+    "experiencia": [
+      "Cybersecurity",
+      "Frontend",
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "React",
+      "FastAPI",
+      "SQL",
+      "Terraform",
+      "PostgreSQL",
+      "JavaScript"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Comunicación"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_007",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "Backend",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MongoDB"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Comunicación"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_008",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "QA Automation",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "React",
+      "Python",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Liderazgo"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_009",
+    "nombre": "Lucía Martínez",
+    "experiencia": [
+      "QA Automation",
+      "Cybersecurity",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "C#",
+      "SQL",
+      "PostgreSQL",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Resolución de problemas"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_010",
+    "nombre": "Elena Ramírez",
+    "experiencia": [
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "FastAPI",
+      "SQL",
+      "Go"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Trabajo en equipo"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_011",
+    "nombre": "María García",
+    "experiencia": [
+      "Frontend",
+      "Backend"
+    ],
+    "skills_tecnicos": [
+      "Terraform",
+      "Go",
+      "React",
+      "Python",
+      "Node.js",
+      "MongoDB"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Liderazgo"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_012",
+    "nombre": "Juan Pérez",
+    "experiencia": [
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "Python",
+      "MongoDB",
+      "TypeScript",
+      "Docker"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Liderazgo"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_013",
+    "nombre": "Juan Pérez",
+    "experiencia": [
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "C#",
+      "Kubernetes",
+      "TypeScript"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Resolución de problemas"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_014",
+    "nombre": "Daniel Vega",
+    "experiencia": [
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "React",
+      "MongoDB",
+      "FastAPI",
+      "SQL",
+      "C#",
+      "Java"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Resolución de problemas"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_015",
+    "nombre": "Laura Sánchez",
+    "experiencia": [
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "TypeScript",
+      "Go",
+      "PostgreSQL",
+      "React"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Liderazgo"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_016",
+    "nombre": "Elena Ramírez",
+    "experiencia": [
+      "Cloud Engineering",
+      "Data Science",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "C#",
+      "Node.js",
+      "JavaScript",
+      "PostgreSQL",
+      "React"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Comunicación"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_017",
+    "nombre": "María García",
+    "experiencia": [
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "JavaScript",
+      "SQL",
+      "Node.js"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Adaptabilidad"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_018",
+    "nombre": "Daniel Vega",
+    "experiencia": [
+      "QA Automation",
+      "Data Science",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "Python",
+      "FastAPI",
+      "Docker",
+      "Terraform",
+      "MongoDB"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Resolución de problemas"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_019",
+    "nombre": "Elena Ramírez",
+    "experiencia": [
+      "DevOps",
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "C#",
+      "Java",
+      "React",
+      "Node.js",
+      "JavaScript"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Adaptabilidad"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_020",
+    "nombre": "Lucía Martínez",
+    "experiencia": [
+      "Cloud Engineering",
+      "Cybersecurity",
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "PostgreSQL",
+      "Java",
+      "Node.js"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Comunicación"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_021",
+    "nombre": "Isabel Vidal",
+    "experiencia": [
+      "Mobile",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "TypeScript",
+      "Go",
+      "Terraform",
+      "FastAPI"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Resolución de problemas"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_022",
+    "nombre": "Carlos López",
+    "experiencia": [
+      "Frontend",
+      "Mobile",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "FastAPI",
+      "MongoDB",
+      "Node.js"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Adaptabilidad"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_023",
+    "nombre": "Paula Núñez",
+    "experiencia": [
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "JavaScript",
+      "Go",
+      "Kubernetes",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Comunicación"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_024",
+    "nombre": "David Castillo",
+    "experiencia": [
+      "Cloud Engineering",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "JavaScript",
+      "React",
+      "Kubernetes",
+      "Go",
+      "AWS",
+      "TypeScript"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Resolución de problemas"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_025",
+    "nombre": "David Castillo",
+    "experiencia": [
+      "Cybersecurity",
+      "Data Science",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "Python",
+      "Go",
+      "JavaScript",
+      "MongoDB",
+      "C#"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Liderazgo"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_026",
+    "nombre": "Carlos López",
+    "experiencia": [
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "TypeScript",
+      "React",
+      "AWS",
+      "Kubernetes"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Resolución de problemas"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_027",
+    "nombre": "Sofía Díaz",
+    "experiencia": [
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "Node.js",
+      "Docker",
+      "C#",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Liderazgo"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_028",
+    "nombre": "Elena Ramírez",
+    "experiencia": [
+      "Data Science",
+      "QA Automation",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "Python",
+      "FastAPI",
+      "JavaScript",
+      "Node.js",
+      "Kubernetes"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Adaptabilidad"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_029",
+    "nombre": "Juan Pérez",
+    "experiencia": [
+      "Backend"
+    ],
+    "skills_tecnicos": [
+      "TypeScript",
+      "SQL",
+      "Kubernetes",
+      "FastAPI",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Trabajo en equipo"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_030",
+    "nombre": "Laura Sánchez",
+    "experiencia": [
+      "Backend",
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "Node.js",
+      "Java",
+      "AWS",
+      "Docker",
+      "C#",
+      "Kubernetes"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Adaptabilidad"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_031",
+    "nombre": "Isabel Vidal",
+    "experiencia": [
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "AWS",
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Kubernetes"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Resolución de problemas"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_032",
+    "nombre": "Pedro Gómez",
+    "experiencia": [
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "Docker",
+      "PostgreSQL",
+      "FastAPI",
+      "TypeScript",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Adaptabilidad"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_033",
+    "nombre": "Paula Núñez",
+    "experiencia": [
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "JavaScript",
+      "FastAPI",
+      "Kubernetes",
+      "AWS",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Resolución de problemas"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_034",
+    "nombre": "Elena Ramírez",
+    "experiencia": [
+      "Backend",
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "TypeScript",
+      "React",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Trabajo en equipo"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_035",
+    "nombre": "Ana Fernández",
+    "experiencia": [
+      "Frontend",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "MongoDB",
+      "TypeScript",
+      "Node.js",
+      "Go",
+      "JavaScript"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Liderazgo"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_036",
+    "nombre": "Clara Moreno",
+    "experiencia": [
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "PostgreSQL",
+      "FastAPI",
+      "AWS",
+      "Python",
+      "React",
+      "JavaScript"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Liderazgo"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_037",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "DevOps",
+      "Backend"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "C#",
+      "Docker"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Liderazgo"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_038",
+    "nombre": "Daniel Vega",
+    "experiencia": [
+      "DevOps",
+      "QA Automation",
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "C#",
+      "Python",
+      "Go"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Trabajo en equipo"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_039",
+    "nombre": "Javier Hernández",
+    "experiencia": [
+      "QA Automation",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "Kubernetes",
+      "Go",
+      "SQL",
+      "PostgreSQL",
+      "JavaScript",
+      "Docker"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Comunicación"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_040",
+    "nombre": "Martín Torres",
+    "experiencia": [
+      "Mobile",
+      "DevOps",
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "Docker",
+      "C#",
+      "SQL",
+      "JavaScript",
+      "PostgreSQL",
+      "Go"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Comunicación"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_041",
+    "nombre": "Elena Ramírez",
+    "experiencia": [
+      "Frontend",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "TypeScript",
+      "Kubernetes",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Adaptabilidad"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_042",
+    "nombre": "Daniel Vega",
+    "experiencia": [
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "AWS",
+      "Terraform",
+      "MongoDB",
+      "React",
+      "C#"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Adaptabilidad"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_043",
+    "nombre": "Diego Ruiz",
+    "experiencia": [
+      "QA Automation",
+      "Data Science",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "PostgreSQL",
+      "Java",
+      "MongoDB",
+      "Docker"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Comunicación"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_044",
+    "nombre": "Miguel González",
+    "experiencia": [
+      "Frontend",
+      "Cybersecurity",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "PostgreSQL",
+      "Python",
+      "Node.js",
+      "FastAPI"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Resolución de problemas"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_045",
+    "nombre": "Clara Moreno",
+    "experiencia": [
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "AWS",
+      "Python",
+      "PostgreSQL"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Adaptabilidad"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_046",
+    "nombre": "Paula Núñez",
+    "experiencia": [
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "Docker",
+      "MongoDB",
+      "Python"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Adaptabilidad"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_047",
+    "nombre": "Lucía Martínez",
+    "experiencia": [
+      "Data Science",
+      "Cloud Engineering",
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "Kubernetes",
+      "React",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Comunicación"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_048",
+    "nombre": "María García",
+    "experiencia": [
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "Terraform",
+      "React",
+      "AWS",
+      "Go",
+      "MongoDB"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Resolución de problemas"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_049",
+    "nombre": "Sofía Díaz",
+    "experiencia": [
+      "QA Automation",
+      "Backend",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "React",
+      "C#",
+      "Kubernetes"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Liderazgo"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  }
+]

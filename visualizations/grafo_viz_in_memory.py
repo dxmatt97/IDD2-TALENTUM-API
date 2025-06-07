@@ -1,5 +1,7 @@
 from neo4j import GraphDatabase
 import pandas as pd
+import matplotlib.pyplot as plt
+import networkx as nx
 
 driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "password"))
 
@@ -30,3 +32,12 @@ with driver.session() as session:
     df = pd.DataFrame([r.data() for r in result])
     print("\nRed de contactos entre candidatos:")
     print(df)
+
+def mostrar_cursos_tomados(G, candidato_id, cursos_tomados):
+    if cursos_tomados:
+        plt.figure(figsize=(6,4))
+        subG = G.subgraph([candidato_id] + cursos_tomados)
+        pos = nx.spring_layout(subG)
+        nx.draw(subG, pos, with_labels=True, node_color='lightblue', edge_color='gray', node_size=1200)
+        plt.title(f"Cursos tomados por {candidato_id}")
+        plt.show()
