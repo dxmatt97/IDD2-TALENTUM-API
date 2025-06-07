@@ -31,6 +31,13 @@ EXPERIENCIA = ["Backend", "Frontend", "Data Science", "DevOps", "Mobile", "Cyber
 
 SENIORITY = ["Junior", "Junior Avanzado", "Semi-Senior", "Senior", "Staff Engineer", "Principal Engineer"]
 
+IDIOMAS = ["Inglés B2", "Inglés C1", "Español Nativo", "Portugués B1", "Alemán A2", "Inglés A2"]
+
+BENEFICIOS = [
+    "Home office", "Capacitaciones pagas", "Bono anual por desempeño", "Gimnasio", 
+    "Horario flexible", "Clases de inglés", "OSDE 310", "Vacaciones extendidas"
+]
+
 # -----------------------------
 # Modelo Documental: Candidatos, Cursos, Búsquedas
 # -----------------------------
@@ -42,6 +49,7 @@ def generar_candidatos(n=50):
             "experiencia": random.sample(EXPERIENCIA, k=random.randint(1, 3)),
             "skills_tecnicos": random.sample(SKILLS, k=random.randint(3, 6)),
             "skills_soft": random.sample(["Comunicación", "Liderazgo", "Resolución de problemas", "Trabajo en equipo", "Adaptabilidad"], k=2),
+            "idiomas": random.sample(IDIOMAS, k=random.randint(1, 2)),
             "seniority": random.choice(SENIORITY),
             "procesos_seleccion": [],
             "historial_cambios": []
@@ -69,6 +77,8 @@ def generar_busquedas(n=20):
             "puesto": random.choice(puestos),
             "requisitos_skills": random.sample(SKILLS, k=random.randint(2, 4)),
             "requisitos_experiencia": random.choice(EXPERIENCIA),
+            "requisitos_idioma": random.sample(IDIOMAS[:3], k=random.randint(1, 2)),
+            "beneficios": random.sample(BENEFICIOS, k=random.randint(2, 4)),
             "seniority_requerido": random.choice(SENIORITY[:4]), # Enfocado en roles hasta Senior
             "fecha_publicacion": (datetime.now() - timedelta(days=random.randint(1, 60))).strftime('%Y-%m-%d')
         }

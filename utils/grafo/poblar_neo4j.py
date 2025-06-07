@@ -3,6 +3,7 @@
 import sys
 import os
 import json
+import random
 from neo4j import GraphDatabase
 from decouple import config
 
@@ -32,7 +33,8 @@ def poblar_neo4j():
             "candidatos": 0, "cursos": 0, "busquedas": 0, "empresas": 0,
             "tecnologias": 0, "idiomas": 0, "beneficios": 0,
             "rel_tomo_curso": 0, "rel_aplica_busqueda": 0, "rel_contacto": 0,
-            "rel_publica": 0, "rel_tiene_skill": 0, "rel_requiere_skill": 0
+            "rel_publica": 0, "rel_tiene_skill": 0, "rel_requiere_skill": 0,
+            "rel_habla_idioma": 0, "rel_requiere_idioma": 0, "rel_incluye_beneficio": 0
         }
     }
 
@@ -61,16 +63,25 @@ def poblar_neo4j():
             session.run("MATCH (n) DETACH DELETE n")
             log["operations"].append({"step": "Limpieza de BD", "status": "success"})
 
-            # --- Creación de Nodos Entidad Unicos (Tecnologia, Idioma, etc.) ---
+            # --- Creación de Nodos Entidad Unicos (Tecnologia, Idioma, Beneficio) ---
             all_skills = set(skill for c in candidatos for skill in c.get('skills_tecnicos', []))
             all_skills.update(skill for b in busquedas for skill in b.get('requisitos_skills', []))
+            all_idiomas = set(lang for c in candidatos for lang in c.get('idiomas', []))
+            all_idiomas.update(lang for b in busquedas for lang in b.get('requisitos_idioma', []))
+            all_beneficios = set(ben for b in busquedas for ben in b.get('beneficios', []))
             
             for skill in all_skills:
                 session.run("MERGE (:Tecnologia {nombre: $skill})", skill=skill)
             log['counts']['tecnologias'] = len(all_skills)
-            
-            # (Aquí se podrían añadir más nodos únicos como Idioma, Beneficio si estuvieran en los datos)
 
+            for lang in all_idiomas:
+                session.run("MERGE (:Idioma {nombre: $lang})", lang=lang)
+            log['counts']['idiomas'] = len(all_idiomas)
+
+            for ben in all_beneficios:
+                session.run("MERGE (:Beneficio {nombre: $ben})", ben=ben)
+            log['counts']['beneficios'] = len(all_beneficios)
+            
             # --- Creación de Nodos Principales (Candidato, Curso, Busqueda, Empresa) ---
             for c in candidatos:
                 session.run(
@@ -103,6 +114,15 @@ def poblar_neo4j():
                     """, cid=c['id'], skill=skill)
                     log['counts']['rel_tiene_skill'] += 1
 
+            # Candidato -> HABLA -> Idioma
+            for c in candidatos:
+                for lang in c.get('idiomas', []):
+                    session.run("""
+                        MATCH (cand:Candidato {id: $cid}), (lang:Idioma {nombre: $lang})
+                        CREATE (cand)-[:HABLA]->(lang)
+                    """, cid=c['id'], lang=lang)
+                    log['counts']['rel_habla_idioma'] += 1
+
             # Busqueda -> REQUIERE_TECNOLOGIA -> Tecnologia
             for b in busquedas:
                 for skill in b.get('requisitos_skills', []):
@@ -111,6 +131,24 @@ def poblar_neo4j():
                         CREATE (busq)-[:REQUIERE_TECNOLOGIA]->(tech)
                     """, bid=b['id'], skill=skill)
                     log['counts']['rel_requiere_skill'] += 1
+
+            # Busqueda -> REQUIERE_IDIOMA -> Idioma
+            for b in busquedas:
+                for lang in b.get('requisitos_idioma', []):
+                    session.run("""
+                        MATCH (busq:Busqueda {id: $bid}), (lang:Idioma {nombre: $lang})
+                        CREATE (busq)-[:REQUIERE_IDIOMA]->(lang)
+                    """, bid=b['id'], lang=lang)
+                    log['counts']['rel_requiere_idioma'] += 1
+            
+            # Busqueda -> INCLUYE_BENEFICIO -> Beneficio
+            for b in busquedas:
+                for ben in b.get('beneficios', []):
+                    session.run("""
+                        MATCH (busq:Busqueda {id: $bid}), (ben:Beneficio {nombre: $ben})
+                        CREATE (busq)-[:INCLUYE_BENEFICIO]->(ben)
+                    """, bid=b['id'], ben=ben)
+                    log['counts']['rel_incluye_beneficio'] += 1
 
             # Empresa -> PUBLICA -> Busqueda
             for b in busquedas:
@@ -126,8 +164,8 @@ def poblar_neo4j():
                 curso_a_tomar = cursos[i % len(cursos)]
                 session.run("""
                     MATCH (cand:Candidato {id: $cid}), (cu:Curso {id: $cuid})
-                    CREATE (cand)-[:TOMO]->(cu)
-                """, cid=c['id'], cuid=curso_a_tomar['id'])
+                    CREATE (cand)-[:TOMO {progreso: $progreso, calificacion: $calif}]->(cu)
+                """, cid=c['id'], cuid=curso_a_tomar['id'], progreso=random.randint(10,100), calif=round(random.uniform(5, 10), 1))
                 log['counts']['rel_tomo_curso'] += 1
             
             # Candidato -> APLICA_A -> Busqueda

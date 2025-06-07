@@ -172,6 +172,59 @@ def get_empresas_y_busquedas():
         result = session.run(query)
         return [record.data() for record in result]
 
+@app.get("/api/busquedas/{busqueda_id}/match-candidatos", tags=["Grafo - Matching"])
+def get_matching_candidatos(busqueda_id: str):
+    """
+    Encuentra los 10 mejores candidatos para una búsqueda, basándose en la coincidencia
+    de skills (75% de peso) y de idiomas (25% de peso).
+    """
+    query = """
+        // 1. Encontrar la búsqueda y recolectar sus requisitos
+        MATCH (b:Busqueda {id: $busqueda_id})-[:REQUIERE_TECNOLOGIA]->(req_skill:Tecnologia)
+        WITH b, collect(req_skill) AS required_skills
+        MATCH (b)-[:REQUIERE_IDIOMA]->(req_lang:Idioma)
+        WITH b, required_skills, collect(req_lang) AS required_languages
+
+        // 2. Encontrar todos los candidatos que aún no han aplicado
+        MATCH (c:Candidato)
+        WHERE NOT (c)-[:APLICA_A]->(b)
+
+        // 3. Calcular coincidencias de skills para cada candidato
+        CALL {
+            WITH c, required_skills
+            UNWIND required_skills AS req_skill
+            MATCH (c)-[:TIENE_SKILL]->(req_skill)
+            RETURN count(req_skill) AS skill_matches
+        }
+
+        // 4. Calcular coincidencias de idiomas para cada candidato
+        CALL {
+            WITH c, required_languages
+            UNWIND required_languages AS req_lang
+            MATCH (c)-[:HABLA]->(req_lang)
+            RETURN count(req_lang) AS lang_matches
+        }
+
+        // 5. Calcular puntaje final y ordenar
+        WITH c, skill_matches, lang_matches,
+             // Evitar división por cero si no hay requisitos
+             toFloat(skill_matches) / size(required_skills) AS skill_score,
+             toFloat(lang_matches) / size(required_languages) AS lang_score
+        WHERE skill_matches > 0 // Requisito mínimo: al menos un skill en común
+
+        RETURN
+            c.id AS candidato_id,
+            c.nombre AS nombre,
+            skill_matches,
+            lang_matches,
+            (skill_score * 0.75) + (lang_score * 0.25) AS match_score
+        ORDER BY match_score DESC
+        LIMIT 10
+    """
+    with neo4j_driver.session() as session:
+        result = session.run(query, busqueda_id=busqueda_id)
+        return [record.data() for record in result]
+
 @app.get("/sesion/{candidato_id}")
 def get_sesion_candidato(candidato_id: str):
     return sesiones.get(candidato_id, {})
