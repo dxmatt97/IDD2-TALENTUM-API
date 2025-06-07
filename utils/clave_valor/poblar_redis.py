@@ -62,10 +62,19 @@ def populate_redis():
         log["actions"].append({"action": "Clearing Redis database (FLUSHDB)", "status": "success"})
 
         # --- 5. Populate Redis with new, dynamic data ---
-        # To avoid creating too many sessions, let's create for a sample of candidates (e.g., max 15)
-        sample_size = min(len(candidate_ids), 15)
-        selected_ids = random.sample(candidate_ids, sample_size)
+        # To avoid creating too many sessions, let's create for a sample of candidates
+        # We'll ensure our main test candidate 'cand_001' is always included.
+        guaranteed_ids = {'cand_001'}
         
+        # Make sure guaranteed IDs exist in the main list
+        valid_guaranteed_ids = [cid for cid in guaranteed_ids if cid in candidate_ids]
+        
+        remaining_ids = [cid for cid in candidate_ids if cid not in guaranteed_ids]
+        
+        sample_size = min(len(remaining_ids), 14) # 14 + our 1 guaranteed ID
+        
+        selected_ids = valid_guaranteed_ids + random.sample(remaining_ids, sample_size)
+
         sessions_created_count = 0
         for cid in selected_ids:
             session_key = f"session:{cid}"

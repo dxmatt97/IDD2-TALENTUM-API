@@ -8,10 +8,18 @@ import subprocess
 import sys
 import json
 import redis
+from datetime import datetime
 
 # Pydantic model for the request body of the update endpoint
 class SeniorityUpdate(BaseModel):
     seniority: str
+
+class Action(BaseModel):
+    action_name: str
+
+class ActionResponse(BaseModel):
+    message: str
+    session_data: dict
 
 # --- Configuración ---
 MONGO_URI = config("MONGO_URI")
@@ -43,6 +51,15 @@ db = mongo_client["talentum_demo"]
 
 neo4j_driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
 redis_client = redis.from_url(REDIS_URL, decode_responses=True)
+
+# --- Helper Functions ---
+def log_recent_action(action_description: str):
+    """Adds an action to the global recent actions list in Redis."""
+    key = "global:recent_actions"
+    # LPUSH adds the new action to the start of the list
+    redis_client.lpush(key, f"{datetime.utcnow().isoformat()}: {action_description}")
+    # LTRIM keeps the list at a max size of 10
+    redis_client.ltrim(key, 0, 9)
 
 @app.on_event("shutdown")
 def shutdown_event():
@@ -173,9 +190,19 @@ def get_empresas_y_busquedas():
 @app.get("/api/busquedas/{busqueda_id}/match-candidatos", tags=["Grafo - Matching"])
 def get_matching_candidatos(busqueda_id: str):
     """
-    Encuentra los 10 mejores candidatos para una búsqueda, basándose en la coincidencia
-    de skills (75% de peso) y de idiomas (25% de peso).
+    Encuentra los 10 mejores candidatos para una búsqueda.
+    Los resultados se cachean en Redis por 5 minutos para mejorar el rendimiento.
     """
+    cache_key = f"cache:matching:{busqueda_id}"
+    cached_result = redis_client.get(cache_key)
+
+    if cached_result:
+        return {
+            "source": "cache",
+            "data": json.loads(cached_result)
+        }
+
+    # Si no está en caché, ejecutar la consulta en Neo4j
     query = """
         // 1. Encontrar la búsqueda y recolectar sus requisitos
         MATCH (b:Busqueda {id: $busqueda_id})-[:REQUIERE_TECNOLOGIA]->(req_skill:Tecnologia)
@@ -221,7 +248,16 @@ def get_matching_candidatos(busqueda_id: str):
     """
     with neo4j_driver.session() as session:
         result = session.run(query, busqueda_id=busqueda_id)
-        return [record.data() for record in result]
+        data = [record.data() for record in result]
+    
+    # Guardar en caché con un TTL de 5 minutos (300 segundos)
+    redis_client.setex(cache_key, 300, json.dumps(data))
+    
+    log_recent_action(f"Smart matching query executed for search '{busqueda_id}'")
+    return {
+        "source": "database",
+        "data": data
+    }
 
 @app.get("/sesion/{candidato_id}", tags=["Clave-Valor - Sesiones"])
 def get_sesion_candidato(candidato_id: str):
@@ -251,6 +287,57 @@ def get_todas_sesiones():
                 **json.loads(session_data)
             })
     return all_sessions
+
+@app.delete("/sesion/{candidato_id}", tags=["Clave-Valor - Sesiones"])
+def delete_sesion_candidato(candidato_id: str):
+    """
+    Elimina una sesión de candidato de Redis (simula un logout).
+    """
+    session_key = f"session:{candidato_id}"
+    deleted_count = redis_client.delete(session_key)
+    if deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Sesión no encontrada para eliminar.")
+    
+    log_recent_action(f"Session deleted for candidate '{candidato_id}' (logout).")
+    return {"message": f"Sesión para el candidato '{candidato_id}' eliminada."}
+
+@app.post("/sesion/{candidato_id}/action", response_model=ActionResponse, tags=["Clave-Valor - Sesiones"])
+def add_action_a_sesion(candidato_id: str, action: Action):
+    """
+    Añade una nueva acción a la lista de acciones recientes de una sesión de candidato.
+    """
+    session_key = f"session:{candidato_id}"
+    session_data_str = redis_client.get(session_key)
+    
+    if not session_data_str:
+        raise HTTPException(status_code=404, detail="Sesión de candidato no encontrada.")
+        
+    session_data = json.loads(session_data_str)
+    
+    if "recent_actions" not in session_data:
+        session_data["recent_actions"] = []
+        
+    session_data["recent_actions"].append(action.action_name)
+    
+    # Actualizar la sesión en Redis
+    redis_client.set(session_key, json.dumps(session_data))
+    
+    log_recent_action(f"Action '{action.action_name}' added to session for '{candidato_id}'.")
+    return {
+        "message": "Acción añadida a la sesión.",
+        "session_data": session_data
+    }
+
+# --- Recent Actions Endpoint ---
+@app.get("/api/actions/recent", tags=["Clave-Valor - Acciones Recientes"])
+def get_recent_actions():
+    """
+    Obtiene las 10 acciones más recientes de la plataforma desde una lista en Redis.
+    """
+    key = "global:recent_actions"
+    # LRANGE obtiene un rango de elementos de la lista. 0 a 9 son los primeros 10.
+    recent_actions = redis_client.lrange(key, 0, 9)
+    return {"recent_actions": recent_actions}
 
 # --- Admin Endpoints ---
 @app.post("/api/admin/populate-mongo", tags=["Administración"])
@@ -349,6 +436,8 @@ def update_candidato_seniority(candidato_id: str, update: SeniorityUpdate):
         raise HTTPException(status_code=404, detail=f"Candidato con id '{candidato_id}' no encontrado.")
     if result.modified_count == 0:
         return {"message": "El candidato ya tenía el seniority especificado."}
+    
+    log_recent_action(f"Candidate '{candidato_id}' seniority updated to '{update.seniority}'.")
     return {"message": f"Seniority del candidato '{candidato_id}' actualizado a '{update.seniority}'."}
 
 @app.delete("/api/candidatos/{candidato_id}", tags=["Documental - Candidatos"])
@@ -359,4 +448,6 @@ def delete_candidato(candidato_id: str):
     result = db["candidatos"].delete_one({"id": candidato_id})
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail=f"Candidato con id '{candidato_id}' no encontrado.")
+    
+    log_recent_action(f"Candidate '{candidato_id}' was deleted.")
     return {"message": f"Candidato con id '{candidato_id}' eliminado exitosamente."}
