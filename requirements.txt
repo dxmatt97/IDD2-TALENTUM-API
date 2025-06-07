@@ -3,8 +3,4 @@ uvicorn
 pymongo
 neo4j
 python-decouple
-pandas
-matplotlib
-networkx
-redis
-ace_tools 
+pydantic
