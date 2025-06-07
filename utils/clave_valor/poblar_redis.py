@@ -1,23 +1,96 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-
 import redis
 import json
-from models.keyvalue import generar_sesiones
+import sys
+import random
+from datetime import datetime, timedelta
+from decouple import config
+from pymongo import MongoClient
 
-# Conexión a Redis
-r = redis.Redis(host='localhost', port=6379, db=0)
+def get_mongo_db():
+    """Establishes connection to MongoDB and returns the database object."""
+    mongo_uri = config("MONGO_URI")
+    client = MongoClient(mongo_uri)
+    return client["talentum_demo"]
 
-# Limpia todas las claves de sesiones (opcional para demo)
-for key in r.scan_iter("session_cand_*"):
-    r.delete(key)
+def generate_random_session(candidate_id):
+    """Generates a plausible random session object for a candidate."""
+    now = datetime.utcnow()
+    status = random.choice(["active", "inactive", "expired"])
+    last_login = now - timedelta(days=random.randint(0, 30), hours=random.randint(0, 23))
+    login_attempts = random.randint(1, 5) if status != "active" else 1
+    
+    possible_actions = ["view_profile", "search_jobs", "apply_job", "update_cv", "view_course", "logout"]
+    recent_actions = random.sample(possible_actions, k=random.randint(0, 4)) if status == "active" else []
 
-# Genera sesiones de ejemplo
-sesiones = generar_sesiones(10)
+    return {
+        "status": status,
+        "last_login": last_login.isoformat() + "Z",
+        "login_attempts": login_attempts,
+        "recent_actions": recent_actions,
+        "generated_at": now.isoformat() + "Z"
+    }
 
-# Inserta las sesiones en Redis
-for key, value in sesiones.items():
-    r.set(key, json.dumps(value))
+def populate_redis():
+    """
+    Connects to Redis & MongoDB, clears Redis, and populates it with dynamically generated session data
+    based on candidates from MongoDB.
+    """
+    log = {
+        "status": "in_progress",
+        "actions": []
+    }
 
-print("Redis poblado con sesiones de ejemplo.")
+    try:
+        # --- 1. Connect to Redis ---
+        redis_url = config("REDIS_URL", default="redis://localhost:6379")
+        r = redis.from_url(redis_url, decode_responses=True)
+        log["actions"].append({"action": "Connecting to Redis", "details": f"URL: {redis_url}", "status": "success"})
+
+        # --- 2. Connect to MongoDB ---
+        db = get_mongo_db()
+        log["actions"].append({"action": "Connecting to MongoDB", "status": "success"})
+
+        # --- 3. Fetch candidate IDs from MongoDB ---
+        candidatos = list(db.candidatos.find({}, {"_id": 0, "id": 1}))
+        candidate_ids = [c["id"] for c in candidatos]
+        if not candidate_ids:
+            raise Exception("No candidates found in MongoDB. Please populate MongoDB first.")
+        log["actions"].append({"action": "Fetching candidates from MongoDB", "details": f"Found {len(candidate_ids)} candidates.", "status": "success"})
+
+        # --- 4. Clear existing data in Redis ---
+        r.flushdb()
+        log["actions"].append({"action": "Clearing Redis database (FLUSHDB)", "status": "success"})
+
+        # --- 5. Populate Redis with new, dynamic data ---
+        # To avoid creating too many sessions, let's create for a sample of candidates (e.g., max 15)
+        sample_size = min(len(candidate_ids), 15)
+        selected_ids = random.sample(candidate_ids, sample_size)
+        
+        sessions_created_count = 0
+        for cid in selected_ids:
+            session_key = f"session:{cid}"
+            session_data = generate_random_session(cid)
+            r.set(session_key, json.dumps(session_data))
+            log["actions"].append({"action": "Creating session", "details": f"Key: {session_key}", "status": "success"})
+            sessions_created_count += 1
+
+        log["status"] = "success"
+        log["summary"] = f"Successfully created {sessions_created_count} dynamic session keys based on MongoDB candidates."
+
+    except redis.exceptions.ConnectionError as e:
+        log["status"] = "error"
+        log["summary"] = "Failed to connect to Redis."
+        log["error_details"] = str(e)
+        log["actions"].append({"action": "Connecting to Redis", "status": "failed", "error": str(e)})
+    except Exception as e:
+        log["status"] = "error"
+        log["summary"] = "An unexpected error occurred."
+        log["error_details"] = str(e)
+    finally:
+        # Print the final log as a JSON string to stdout
+        print(json.dumps(log, indent=2))
+        if log["status"] == "error":
+            sys.exit(1)
+
+if __name__ == "__main__":
+    populate_redis()

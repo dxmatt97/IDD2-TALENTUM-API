@@ -7,6 +7,7 @@ from pydantic import BaseModel
 import subprocess
 import sys
 import json
+import redis
 
 # Pydantic model for the request body of the update endpoint
 class SeniorityUpdate(BaseModel):
@@ -17,6 +18,7 @@ MONGO_URI = config("MONGO_URI")
 NEO4J_URI = config("NEO4J_URI")
 NEO4J_USER = config("NEO4J_USER")
 NEO4J_PASSWORD = config("NEO4J_PASSWORD")
+REDIS_URL = config("REDIS_URL", default="redis://localhost:6379")
 
 # --- Inicialización de la App ---
 app = FastAPI(
@@ -40,17 +42,13 @@ mongo_client = MongoClient(MONGO_URI)
 db = mongo_client["talentum_demo"]
 
 neo4j_driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
-
-# Simulación en memoria (reemplaza por Redis si lo tienes)
-sesiones = {
-    "cand_001": {"estado": "activa", "acciones": ["login", "ver_curso"]},
-    "cand_002": {"estado": "inactiva", "acciones": ["login"]}
-}
+redis_client = redis.from_url(REDIS_URL, decode_responses=True)
 
 @app.on_event("shutdown")
 def shutdown_event():
     mongo_client.close()
     neo4j_driver.close()
+    redis_client.close()
 
 # --- Endpoints ---
 
@@ -225,13 +223,34 @@ def get_matching_candidatos(busqueda_id: str):
         result = session.run(query, busqueda_id=busqueda_id)
         return [record.data() for record in result]
 
-@app.get("/sesion/{candidato_id}")
+@app.get("/sesion/{candidato_id}", tags=["Clave-Valor - Sesiones"])
 def get_sesion_candidato(candidato_id: str):
-    return sesiones.get(candidato_id, {})
+    """
+    Obtiene los datos de sesión de un candidato desde Redis.
+    Las sesiones se almacenan como JSON strings.
+    """
+    session_data = redis_client.get(f"session:{candidato_id}")
+    if session_data is None:
+        raise HTTPException(status_code=404, detail="Sesión no encontrada")
+    return json.loads(session_data)
 
-@app.get("/sesiones")
+@app.get("/sesiones", tags=["Clave-Valor - Sesiones"])
 def get_todas_sesiones():
-    return [{"candidato_id": k, **v} for k, v in sesiones.items()]
+    """
+    Obtiene todas las sesiones activas desde Redis.
+    Usa SCAN para iterar sobre las claves sin bloquear el servidor.
+    """
+    all_sessions = []
+    # Usamos scan para no bloquear Redis en producción si hay muchas llaves
+    for key in redis_client.scan_iter("session:*"):
+        session_data = redis_client.get(key)
+        if session_data:
+            session_id = key.split(":")[1]
+            all_sessions.append({
+                "candidato_id": session_id,
+                **json.loads(session_data)
+            })
+    return all_sessions
 
 # --- Admin Endpoints ---
 @app.post("/api/admin/populate-mongo", tags=["Administración"])
@@ -271,6 +290,33 @@ def populate_neo4j_db():
     """
     try:
         script_path = "utils/grafo/poblar_neo4j.py"
+        result = subprocess.run(
+            [sys.executable, script_path],
+            capture_output=True,
+            text=True,
+            check=True,
+            encoding='utf-8'
+        )
+        return json.loads(result.stdout)
+    except subprocess.CalledProcessError as e:
+        try:
+            error_output = json.loads(e.stdout)
+            return {"status": "error", "message": "Falló la población de la base de datos.", "details": error_output}
+        except json.JSONDecodeError:
+            return {"status": "error", "message": "Falló la población de la base de datos.", "raw_output": e.stdout or e.stderr}
+    except FileNotFoundError:
+        return {"status": "error", "message": f"Error: script '{script_path}' no encontrado."}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+@app.post("/api/admin/populate-redis", tags=["Administración"])
+def populate_redis_db():
+    """
+    Ejecuta el script de población de Redis y devuelve un log estructurado.
+    ¡Cuidado! Esto borrará todos los datos existentes en la base de datos Redis.
+    """
+    try:
+        script_path = "utils/clave_valor/poblar_redis.py"
         result = subprocess.run(
             [sys.executable, script_path],
             capture_output=True,

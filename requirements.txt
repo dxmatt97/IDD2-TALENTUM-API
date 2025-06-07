@@ -4,3 +4,4 @@ pymongo
 neo4j
 python-decouple
 pydantic
+redis
