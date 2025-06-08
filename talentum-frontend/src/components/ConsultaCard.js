@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, Button, Collapse, CircularProgress, Aler
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark, materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = "http://localhost:8000";
 
 const ResultsDisplay = ({ data, isAction = false }) => {
   const theme = useTheme();
@@ -25,7 +25,7 @@ const ResultsDisplay = ({ data, isAction = false }) => {
   );
 };
 
-const ConsultaCard = ({ title, description, dbInfo, codeSnippet, endpoint, method = 'GET' }) => {
+const ConsultaCard = ({ title, description, dbInfo, codeSnippet, endpoint, body, method = 'GET' }) => {
   const [showQuery, setShowQuery] = useState(false);
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -49,7 +49,7 @@ const ConsultaCard = ({ title, description, dbInfo, codeSnippet, endpoint, metho
       let response;
       switch (method) {
         case 'POST':
-          response = await axios.post(url);
+          response = await axios.post(url, body || {});
           break;
         case 'PUT':
           // Hardcoded body for this specific demo case

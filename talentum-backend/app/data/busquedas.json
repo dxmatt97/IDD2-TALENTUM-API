@@ -1,0 +1,434 @@
+[
+  {
+    "id": "busq_000",
+    "empresa": "QuantumLeap",
+    "puesto": "DevOps Engineer",
+    "requisitos_skills": [
+      "Terraform",
+      "AWS"
+    ],
+    "requisitos_experiencia": "Backend",
+    "requisitos_idioma": [
+      "Español Nativo"
+    ],
+    "beneficios": [
+      "Clases de inglés",
+      "Home office",
+      "Vacaciones extendidas",
+      "Bono anual por desempeño"
+    ],
+    "seniority_requerido": "Junior",
+    "fecha_publicacion": "2025-05-29"
+  },
+  {
+    "id": "busq_001",
+    "empresa": "AgileInnovations",
+    "puesto": "Project Manager",
+    "requisitos_skills": [
+      "Node.js",
+      "Docker"
+    ],
+    "requisitos_experiencia": "QA Automation",
+    "requisitos_idioma": [
+      "Inglés B2",
+      "Inglés C1"
+    ],
+    "beneficios": [
+      "Clases de inglés",
+      "Capacitaciones pagas",
+      "OSDE 310",
+      "Horario flexible"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-04-30"
+  },
+  {
+    "id": "busq_002",
+    "empresa": "SmartSystems",
+    "puesto": "Desarrollador Backend",
+    "requisitos_skills": [
+      "C#",
+      "Python",
+      "Go",
+      "MongoDB"
+    ],
+    "requisitos_experiencia": "Backend",
+    "requisitos_idioma": [
+      "Español Nativo",
+      "Inglés B2"
+    ],
+    "beneficios": [
+      "Capacitaciones pagas",
+      "Vacaciones extendidas",
+      "Gimnasio"
+    ],
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-28"
+  },
+  {
+    "id": "busq_003",
+    "empresa": "AgileInnovations",
+    "puesto": "DevOps Engineer",
+    "requisitos_skills": [
+      "SQL",
+      "React",
+      "MongoDB",
+      "Python"
+    ],
+    "requisitos_experiencia": "Mobile",
+    "requisitos_idioma": [
+      "Inglés B2"
+    ],
+    "beneficios": [
+      "Capacitaciones pagas",
+      "Home office",
+      "Gimnasio"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-06-02"
+  },
+  {
+    "id": "busq_004",
+    "empresa": "CloudNet",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "TypeScript",
+      "Python",
+      "MongoDB",
+      "AWS"
+    ],
+    "requisitos_experiencia": "Mobile",
+    "requisitos_idioma": [
+      "Inglés B2"
+    ],
+    "beneficios": [
+      "Vacaciones extendidas",
+      "Horario flexible"
+    ],
+    "seniority_requerido": "Junior",
+    "fecha_publicacion": "2025-04-10"
+  },
+  {
+    "id": "busq_005",
+    "empresa": "NextGenApps",
+    "puesto": "Desarrollador Backend",
+    "requisitos_skills": [
+      "React",
+      "Docker",
+      "Go",
+      "AWS"
+    ],
+    "requisitos_experiencia": "Mobile",
+    "requisitos_idioma": [
+      "Inglés C1"
+    ],
+    "beneficios": [
+      "OSDE 310",
+      "Gimnasio"
+    ],
+    "seniority_requerido": "Junior Avanzado",
+    "fecha_publicacion": "2025-05-17"
+  },
+  {
+    "id": "busq_006",
+    "empresa": "DataCorp",
+    "puesto": "DevOps Engineer",
+    "requisitos_skills": [
+      "Go",
+      "MongoDB",
+      "React",
+      "Python"
+    ],
+    "requisitos_experiencia": "Frontend",
+    "requisitos_idioma": [
+      "Inglés C1",
+      "Inglés B2"
+    ],
+    "beneficios": [
+      "Vacaciones extendidas",
+      "Clases de inglés",
+      "Bono anual por desempeño"
+    ],
+    "seniority_requerido": "Junior",
+    "fecha_publicacion": "2025-05-05"
+  },
+  {
+    "id": "busq_007",
+    "empresa": "DataCorp",
+    "puesto": "QA Tester",
+    "requisitos_skills": [
+      "Docker",
+      "SQL"
+    ],
+    "requisitos_experiencia": "Data Science",
+    "requisitos_idioma": [
+      "Inglés C1"
+    ],
+    "beneficios": [
+      "OSDE 310",
+      "Home office",
+      "Gimnasio"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-05-10"
+  },
+  {
+    "id": "busq_008",
+    "empresa": "QuantumLeap",
+    "puesto": "QA Tester",
+    "requisitos_skills": [
+      "Python",
+      "TypeScript",
+      "Go",
+      "JavaScript"
+    ],
+    "requisitos_experiencia": "DevOps",
+    "requisitos_idioma": [
+      "Español Nativo"
+    ],
+    "beneficios": [
+      "Gimnasio",
+      "Horario flexible",
+      "Home office"
+    ],
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-09"
+  },
+  {
+    "id": "busq_009",
+    "empresa": "NextGenApps",
+    "puesto": "QA Tester",
+    "requisitos_skills": [
+      "Python",
+      "React",
+      "TypeScript"
+    ],
+    "requisitos_experiencia": "Data Science",
+    "requisitos_idioma": [
+      "Español Nativo"
+    ],
+    "beneficios": [
+      "Bono anual por desempeño",
+      "OSDE 310",
+      "Gimnasio",
+      "Vacaciones extendidas"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-04-26"
+  },
+  {
+    "id": "busq_010",
+    "empresa": "SoftWorks",
+    "puesto": "Data Scientist",
+    "requisitos_skills": [
+      "SQL",
+      "Java",
+      "TypeScript",
+      "MongoDB"
+    ],
+    "requisitos_experiencia": "Data Science",
+    "requisitos_idioma": [
+      "Inglés C1",
+      "Inglés B2"
+    ],
+    "beneficios": [
+      "Horario flexible",
+      "Capacitaciones pagas",
+      "Bono anual por desempeño"
+    ],
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-21"
+  },
+  {
+    "id": "busq_011",
+    "empresa": "NextGenApps",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "Node.js",
+      "AWS",
+      "Terraform",
+      "JavaScript"
+    ],
+    "requisitos_experiencia": "QA Automation",
+    "requisitos_idioma": [
+      "Inglés B2",
+      "Inglés C1"
+    ],
+    "beneficios": [
+      "Home office",
+      "Capacitaciones pagas",
+      "Clases de inglés",
+      "Horario flexible"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-04-10"
+  },
+  {
+    "id": "busq_012",
+    "empresa": "NextGenApps",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "Node.js",
+      "Java"
+    ],
+    "requisitos_experiencia": "Cybersecurity",
+    "requisitos_idioma": [
+      "Inglés B2"
+    ],
+    "beneficios": [
+      "OSDE 310",
+      "Horario flexible",
+      "Capacitaciones pagas",
+      "Gimnasio"
+    ],
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-06-06"
+  },
+  {
+    "id": "busq_013",
+    "empresa": "CodeFactory",
+    "puesto": "Data Scientist",
+    "requisitos_skills": [
+      "TypeScript",
+      "AWS",
+      "Python"
+    ],
+    "requisitos_experiencia": "QA Automation",
+    "requisitos_idioma": [
+      "Inglés B2",
+      "Español Nativo"
+    ],
+    "beneficios": [
+      "Capacitaciones pagas",
+      "OSDE 310"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-05-18"
+  },
+  {
+    "id": "busq_014",
+    "empresa": "ByteForge",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "MongoDB",
+      "SQL",
+      "Node.js"
+    ],
+    "requisitos_experiencia": "Frontend",
+    "requisitos_idioma": [
+      "Inglés C1"
+    ],
+    "beneficios": [
+      "Gimnasio",
+      "Vacaciones extendidas"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-05-30"
+  },
+  {
+    "id": "busq_015",
+    "empresa": "DataDriven",
+    "puesto": "Project Manager",
+    "requisitos_skills": [
+      "Python",
+      "PostgreSQL",
+      "React",
+      "MongoDB"
+    ],
+    "requisitos_experiencia": "Cybersecurity",
+    "requisitos_idioma": [
+      "Español Nativo"
+    ],
+    "beneficios": [
+      "Vacaciones extendidas",
+      "Bono anual por desempeño",
+      "Home office",
+      "Gimnasio"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-05-29"
+  },
+  {
+    "id": "busq_016",
+    "empresa": "DigitalMind",
+    "puesto": "Frontend Developer",
+    "requisitos_skills": [
+      "Terraform",
+      "React"
+    ],
+    "requisitos_experiencia": "Backend",
+    "requisitos_idioma": [
+      "Inglés B2"
+    ],
+    "beneficios": [
+      "Clases de inglés",
+      "Bono anual por desempeño",
+      "Horario flexible"
+    ],
+    "seniority_requerido": "Junior Avanzado",
+    "fecha_publicacion": "2025-05-15"
+  },
+  {
+    "id": "busq_017",
+    "empresa": "DigitalMind",
+    "puesto": "Cloud Architect",
+    "requisitos_skills": [
+      "AWS",
+      "Go"
+    ],
+    "requisitos_experiencia": "Mobile",
+    "requisitos_idioma": [
+      "Español Nativo"
+    ],
+    "beneficios": [
+      "Home office",
+      "Gimnasio",
+      "Vacaciones extendidas",
+      "Horario flexible"
+    ],
+    "seniority_requerido": "Senior",
+    "fecha_publicacion": "2025-05-02"
+  },
+  {
+    "id": "busq_018",
+    "empresa": "DataDriven",
+    "puesto": "QA Tester",
+    "requisitos_skills": [
+      "Kubernetes",
+      "JavaScript"
+    ],
+    "requisitos_experiencia": "QA Automation",
+    "requisitos_idioma": [
+      "Inglés B2",
+      "Español Nativo"
+    ],
+    "beneficios": [
+      "Horario flexible",
+      "Clases de inglés",
+      "Capacitaciones pagas"
+    ],
+    "seniority_requerido": "Junior",
+    "fecha_publicacion": "2025-05-13"
+  },
+  {
+    "id": "busq_019",
+    "empresa": "ByteForge",
+    "puesto": "Cloud Architect",
+    "requisitos_skills": [
+      "Terraform",
+      "MongoDB"
+    ],
+    "requisitos_experiencia": "Cloud Engineering",
+    "requisitos_idioma": [
+      "Español Nativo",
+      "Inglés B2"
+    ],
+    "beneficios": [
+      "Horario flexible",
+      "Capacitaciones pagas",
+      "Clases de inglés"
+    ],
+    "seniority_requerido": "Semi-Senior",
+    "fecha_publicacion": "2025-05-08"
+  }
+]

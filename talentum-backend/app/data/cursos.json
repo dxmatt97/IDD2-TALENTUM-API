@@ -1,0 +1,92 @@
+[
+  {
+    "id": "curso_000",
+    "titulo": "Introducción a la Inteligencia Artificial",
+    "tipo": "PDF",
+    "contenido": "Contenido detallado y práctico del curso 0..."
+  },
+  {
+    "id": "curso_001",
+    "titulo": "Introducción a la Inteligencia Artificial",
+    "tipo": "video",
+    "contenido": "Contenido detallado y práctico del curso 1..."
+  },
+  {
+    "id": "curso_002",
+    "titulo": "Docker & Kubernetes: Guía Completa",
+    "tipo": "PDF",
+    "contenido": "Contenido detallado y práctico del curso 2..."
+  },
+  {
+    "id": "curso_003",
+    "titulo": "Bases de Datos NoSQL",
+    "tipo": "tutorial interactivo",
+    "contenido": "Contenido detallado y práctico del curso 3..."
+  },
+  {
+    "id": "curso_004",
+    "titulo": "Docker & Kubernetes: Guía Completa",
+    "tipo": "tutorial interactivo",
+    "contenido": "Contenido detallado y práctico del curso 4..."
+  },
+  {
+    "id": "curso_005",
+    "titulo": "Backend con Go y Gin",
+    "tipo": "PDF",
+    "contenido": "Contenido detallado y práctico del curso 5..."
+  },
+  {
+    "id": "curso_006",
+    "titulo": "Python para Data Science",
+    "tipo": "video",
+    "contenido": "Contenido detallado y práctico del curso 6..."
+  },
+  {
+    "id": "curso_007",
+    "titulo": "Metodologías Ágiles y Scrum",
+    "tipo": "video",
+    "contenido": "Contenido detallado y práctico del curso 7..."
+  },
+  {
+    "id": "curso_008",
+    "titulo": "Machine Learning con Scikit-Learn",
+    "tipo": "clase online",
+    "contenido": "Contenido detallado y práctico del curso 8..."
+  },
+  {
+    "id": "curso_009",
+    "titulo": "Metodologías Ágiles y Scrum",
+    "tipo": "video",
+    "contenido": "Contenido detallado y práctico del curso 9..."
+  },
+  {
+    "id": "curso_010",
+    "titulo": "Desarrollo Web Fullstack",
+    "tipo": "tutorial interactivo",
+    "contenido": "Contenido detallado y práctico del curso 10..."
+  },
+  {
+    "id": "curso_011",
+    "titulo": "React: De Cero a Experto",
+    "tipo": "clase online",
+    "contenido": "Contenido detallado y práctico del curso 11..."
+  },
+  {
+    "id": "curso_012",
+    "titulo": "Docker & Kubernetes: Guía Completa",
+    "tipo": "video",
+    "contenido": "Contenido detallado y práctico del curso 12..."
+  },
+  {
+    "id": "curso_013",
+    "titulo": "Machine Learning con Scikit-Learn",
+    "tipo": "PDF",
+    "contenido": "Contenido detallado y práctico del curso 13..."
+  },
+  {
+    "id": "curso_014",
+    "titulo": "Python para Data Science",
+    "tipo": "PDF",
+    "contenido": "Contenido detallado y práctico del curso 14..."
+  }
+]

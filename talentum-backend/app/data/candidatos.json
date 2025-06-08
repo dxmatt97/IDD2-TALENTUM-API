@@ -1,0 +1,1240 @@
+[
+  {
+    "id": "cand_000",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "Cloud Engineering",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "JavaScript",
+      "TypeScript",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Resolución de problemas"
+    ],
+    "idiomas": [
+      "Portugués B1"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_001",
+    "nombre": "Carlos López",
+    "experiencia": [
+      "Cloud Engineering",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "Python",
+      "Kubernetes",
+      "Docker",
+      "SQL",
+      "MongoDB"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Inglés C1"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_002",
+    "nombre": "Ana Fernández",
+    "experiencia": [
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "Kubernetes",
+      "C#",
+      "TypeScript"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés A2",
+      "Inglés C1"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_003",
+    "nombre": "Miguel González",
+    "experiencia": [
+      "Cybersecurity",
+      "Backend",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "Python",
+      "Go",
+      "C#",
+      "React"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Portugués B1"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_004",
+    "nombre": "Ana Fernández",
+    "experiencia": [
+      "Mobile",
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "Python",
+      "TypeScript",
+      "Terraform",
+      "Node.js"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Inglés A2",
+      "Alemán A2"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_005",
+    "nombre": "Juan Pérez",
+    "experiencia": [
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "Go",
+      "MongoDB",
+      "AWS",
+      "Docker",
+      "Node.js"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Comunicación"
+    ],
+    "idiomas": [
+      "Inglés C1",
+      "Inglés A2"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_006",
+    "nombre": "Carlos López",
+    "experiencia": [
+      "Backend",
+      "Mobile",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "Terraform",
+      "MongoDB",
+      "JavaScript",
+      "Docker"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Alemán A2",
+      "Inglés B2"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_007",
+    "nombre": "Carlos López",
+    "experiencia": [
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "Node.js",
+      "JavaScript",
+      "SQL",
+      "MongoDB",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés C1"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_008",
+    "nombre": "Clara Moreno",
+    "experiencia": [
+      "QA Automation",
+      "Backend",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "Go",
+      "Java",
+      "SQL"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Resolución de problemas"
+    ],
+    "idiomas": [
+      "Inglés B2"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_009",
+    "nombre": "Diego Ruiz",
+    "experiencia": [
+      "DevOps",
+      "Cybersecurity",
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "JavaScript",
+      "Kubernetes",
+      "Java",
+      "SQL",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Alemán A2",
+      "Inglés C1"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_010",
+    "nombre": "Paula Núñez",
+    "experiencia": [
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "FastAPI",
+      "TypeScript",
+      "SQL"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Inglés C1"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_011",
+    "nombre": "Ana Fernández",
+    "experiencia": [
+      "Data Science",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "FastAPI",
+      "Java",
+      "Docker",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Resolución de problemas"
+    ],
+    "idiomas": [
+      "Inglés B2"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_012",
+    "nombre": "Pedro Gómez",
+    "experiencia": [
+      "Backend"
+    ],
+    "skills_tecnicos": [
+      "C#",
+      "Java",
+      "FastAPI"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés C1",
+      "Portugués B1"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_013",
+    "nombre": "Diego Ruiz",
+    "experiencia": [
+      "Data Science",
+      "QA Automation",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "Terraform",
+      "React",
+      "AWS",
+      "MongoDB"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Español Nativo"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_014",
+    "nombre": "Diego Ruiz",
+    "experiencia": [
+      "Cybersecurity",
+      "Frontend",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "React",
+      "Kubernetes",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Resolución de problemas"
+    ],
+    "idiomas": [
+      "Portugués B1",
+      "Inglés A2"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_015",
+    "nombre": "María García",
+    "experiencia": [
+      "Cloud Engineering",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "Node.js",
+      "Go",
+      "JavaScript",
+      "MongoDB",
+      "C#"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés A2"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_016",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "Terraform",
+      "JavaScript",
+      "Go"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Español Nativo"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_017",
+    "nombre": "Isabel Vidal",
+    "experiencia": [
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "TypeScript",
+      "Terraform",
+      "Node.js",
+      "AWS",
+      "Docker"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés A2"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_018",
+    "nombre": "Martín Torres",
+    "experiencia": [
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "Kubernetes",
+      "Node.js",
+      "React",
+      "SQL"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Inglés C1"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_019",
+    "nombre": "Marcos Alonso",
+    "experiencia": [
+      "Backend",
+      "QA Automation",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "C#",
+      "Python",
+      "JavaScript",
+      "Java",
+      "Node.js"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Inglés A2"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_020",
+    "nombre": "Laura Sánchez",
+    "experiencia": [
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "PostgreSQL",
+      "MongoDB",
+      "JavaScript",
+      "FastAPI"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Español Nativo",
+      "Portugués B1"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_021",
+    "nombre": "Javier Hernández",
+    "experiencia": [
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "Terraform",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Español Nativo"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_022",
+    "nombre": "Pedro Gómez",
+    "experiencia": [
+      "Data Science",
+      "Backend",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "PostgreSQL",
+      "SQL",
+      "C#",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Español Nativo"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_023",
+    "nombre": "Martín Torres",
+    "experiencia": [
+      "QA Automation",
+      "Backend"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "Docker",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Resolución de problemas"
+    ],
+    "idiomas": [
+      "Inglés C1",
+      "Inglés B2"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_024",
+    "nombre": "David Castillo",
+    "experiencia": [
+      "Frontend",
+      "Mobile",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "Python",
+      "SQL",
+      "Go"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Inglés B2",
+      "Portugués B1"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_025",
+    "nombre": "Clara Moreno",
+    "experiencia": [
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "Kubernetes",
+      "Go",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés B2",
+      "Español Nativo"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_026",
+    "nombre": "María García",
+    "experiencia": [
+      "Cloud Engineering",
+      "Backend",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "Terraform",
+      "MongoDB",
+      "SQL"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Inglés C1",
+      "Español Nativo"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_027",
+    "nombre": "Carlos López",
+    "experiencia": [
+      "Mobile",
+      "Cloud Engineering"
+    ],
+    "skills_tecnicos": [
+      "Kubernetes",
+      "JavaScript",
+      "C#"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Inglés B2"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_028",
+    "nombre": "María García",
+    "experiencia": [
+      "Cloud Engineering",
+      "Backend",
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "Kubernetes",
+      "React",
+      "JavaScript"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés B2",
+      "Portugués B1"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_029",
+    "nombre": "Ana Fernández",
+    "experiencia": [
+      "Data Science",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "SQL",
+      "Node.js",
+      "React"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Inglés A2",
+      "Español Nativo"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_030",
+    "nombre": "Isabel Vidal",
+    "experiencia": [
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "Python",
+      "Docker",
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "C#"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés C1",
+      "Inglés B2"
+    ],
+    "seniority": "Staff Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_031",
+    "nombre": "Laura Sánchez",
+    "experiencia": [
+      "Backend",
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "AWS",
+      "C#",
+      "TypeScript",
+      "FastAPI",
+      "Node.js"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Comunicación"
+    ],
+    "idiomas": [
+      "Portugués B1",
+      "Inglés C1"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_032",
+    "nombre": "Sofía Díaz",
+    "experiencia": [
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "C#",
+      "Go",
+      "Node.js",
+      "AWS",
+      "SQL"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Comunicación"
+    ],
+    "idiomas": [
+      "Inglés A2"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_033",
+    "nombre": "María García",
+    "experiencia": [
+      "Backend",
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "Node.js",
+      "React",
+      "Docker",
+      "FastAPI",
+      "SQL",
+      "Python"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Comunicación"
+    ],
+    "idiomas": [
+      "Alemán A2"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_034",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "Cloud Engineering",
+      "Data Science",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "FastAPI",
+      "MongoDB",
+      "React",
+      "C#",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Inglés A2"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_035",
+    "nombre": "Carlos López",
+    "experiencia": [
+      "Cybersecurity",
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "Python",
+      "Terraform",
+      "C#"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Portugués B1",
+      "Inglés B2"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_036",
+    "nombre": "David Castillo",
+    "experiencia": [
+      "Backend",
+      "Frontend",
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "Go",
+      "AWS",
+      "Python",
+      "FastAPI"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Inglés C1",
+      "Portugués B1"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_037",
+    "nombre": "Isabel Vidal",
+    "experiencia": [
+      "Frontend"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "Python",
+      "React",
+      "SQL",
+      "Kubernetes"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Resolución de problemas"
+    ],
+    "idiomas": [
+      "Inglés A2"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_038",
+    "nombre": "Martín Torres",
+    "experiencia": [
+      "Backend",
+      "Cybersecurity"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "C#",
+      "Terraform",
+      "Node.js",
+      "React"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Resolución de problemas"
+    ],
+    "idiomas": [
+      "Inglés C1"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_039",
+    "nombre": "María García",
+    "experiencia": [
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "FastAPI",
+      "Python",
+      "Docker",
+      "C#",
+      "SQL"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Portugués B1"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_040",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "Frontend",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "PostgreSQL",
+      "Python",
+      "Terraform",
+      "MongoDB"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Inglés B2",
+      "Portugués B1"
+    ],
+    "seniority": "Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_041",
+    "nombre": "Javier Hernández",
+    "experiencia": [
+      "Cybersecurity",
+      "DevOps"
+    ],
+    "skills_tecnicos": [
+      "Go",
+      "JavaScript",
+      "Python"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Alemán A2",
+      "Inglés C1"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_042",
+    "nombre": "Valentina Romero",
+    "experiencia": [
+      "Cybersecurity",
+      "DevOps",
+      "Backend"
+    ],
+    "skills_tecnicos": [
+      "Terraform",
+      "React",
+      "Python"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Alemán A2",
+      "Inglés A2"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_043",
+    "nombre": "Daniel Vega",
+    "experiencia": [
+      "Cybersecurity",
+      "Mobile",
+      "Backend"
+    ],
+    "skills_tecnicos": [
+      "FastAPI",
+      "SQL",
+      "TypeScript"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Inglés B2",
+      "Portugués B1"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_044",
+    "nombre": "Ana Fernández",
+    "experiencia": [
+      "Cloud Engineering",
+      "Cybersecurity",
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "SQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Kubernetes",
+      "TypeScript",
+      "JavaScript"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Liderazgo"
+    ],
+    "idiomas": [
+      "Alemán A2"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_045",
+    "nombre": "Marcos Alonso",
+    "experiencia": [
+      "DevOps",
+      "Cybersecurity",
+      "Data Science"
+    ],
+    "skills_tecnicos": [
+      "MongoDB",
+      "FastAPI",
+      "PostgreSQL",
+      "SQL",
+      "Kubernetes",
+      "JavaScript"
+    ],
+    "skills_soft": [
+      "Comunicación",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Inglés B2"
+    ],
+    "seniority": "Junior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_046",
+    "nombre": "Diego Ruiz",
+    "experiencia": [
+      "DevOps",
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "Kubernetes",
+      "Go",
+      "Terraform"
+    ],
+    "skills_soft": [
+      "Liderazgo",
+      "Trabajo en equipo"
+    ],
+    "idiomas": [
+      "Inglés C1"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_047",
+    "nombre": "Javier Hernández",
+    "experiencia": [
+      "Cloud Engineering",
+      "Backend"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "Node.js",
+      "JavaScript",
+      "Go"
+    ],
+    "skills_soft": [
+      "Adaptabilidad",
+      "Resolución de problemas"
+    ],
+    "idiomas": [
+      "Alemán A2"
+    ],
+    "seniority": "Principal Engineer",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_048",
+    "nombre": "Clara Moreno",
+    "experiencia": [
+      "QA Automation",
+      "Backend",
+      "Mobile"
+    ],
+    "skills_tecnicos": [
+      "React",
+      "MongoDB",
+      "C#",
+      "Kubernetes",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Resolución de problemas",
+      "Comunicación"
+    ],
+    "idiomas": [
+      "Español Nativo"
+    ],
+    "seniority": "Semi-Senior",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  },
+  {
+    "id": "cand_049",
+    "nombre": "Ana Fernández",
+    "experiencia": [
+      "Mobile",
+      "QA Automation"
+    ],
+    "skills_tecnicos": [
+      "Java",
+      "FastAPI",
+      "AWS",
+      "C#"
+    ],
+    "skills_soft": [
+      "Trabajo en equipo",
+      "Adaptabilidad"
+    ],
+    "idiomas": [
+      "Español Nativo"
+    ],
+    "seniority": "Junior Avanzado",
+    "procesos_seleccion": [],
+    "historial_cambios": []
+  }
+]

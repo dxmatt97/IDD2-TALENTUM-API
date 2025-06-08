@@ -2,7 +2,8 @@ const consultas = [
   // Administración
   {
     title: "Poblar MongoDB",
-    description: "Ejecuta un script para limpiar y poblar la base de datos de MongoDB con datos de prueba. Devuelve el log de la operación.",
+    description:
+      "Ejecuta un script para limpiar y poblar la base de datos de MongoDB con datos de prueba. Devuelve el log de la operación.",
     endpoint: "/api/admin/populate-mongo",
     method: "POST",
     dbInfo: { name: "MongoDB", model: "Administración" },
@@ -32,11 +33,12 @@ def poblar_mongo():
             # ... (más conteos)
         }
     }
-`
+`,
   },
   {
     title: "Poblar Neo4j",
-    description: "Ejecuta un script para limpiar y poblar la base de datos de Neo4j con un grafo de prueba. Devuelve el log de la operación.",
+    description:
+      "Ejecuta un script para limpiar y poblar la base de datos de Neo4j con un grafo de prueba. Devuelve el log de la operación.",
     endpoint: "/api/admin/populate-neo4j",
     method: "POST",
     dbInfo: { name: "Neo4j", model: "Administración" },
@@ -64,7 +66,7 @@ def poblar_neo4j():
         "status": "success",
         "counts": { ... }
     }
-`
+`,
   },
   // Documental
   {
@@ -73,7 +75,7 @@ def poblar_neo4j():
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Candidatos",
     codeSnippet: `db.candidatos.find({})`,
-    endpoint: "/api/candidatos"
+    endpoint: "/api/candidatos",
   },
   {
     title: "Candidatos con skill Python",
@@ -81,7 +83,7 @@ def poblar_neo4j():
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Candidatos",
     codeSnippet: `db.candidatos.find({ skills_tecnicos: "Python" })`,
-    endpoint: "/api/candidatos/skill/Python"
+    endpoint: "/api/candidatos/skill/Python",
   },
   {
     title: "Candidatos con experiencia en Backend",
@@ -89,7 +91,7 @@ def poblar_neo4j():
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Candidatos",
     codeSnippet: `db.candidatos.find({ experiencia: "Backend" })`,
-    endpoint: "/api/candidatos/experiencia/Backend"
+    endpoint: "/api/candidatos/experiencia/Backend",
   },
   {
     title: "Candidatos con seniority Senior",
@@ -97,14 +99,15 @@ def poblar_neo4j():
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Candidatos",
     codeSnippet: `db.candidatos.find({ seniority: "Senior" })`,
-    endpoint: "/api/candidatos/seniority/Senior"
+    endpoint: "/api/candidatos/seniority/Senior",
   },
   {
     title: "Actualizar Seniority de cand_007",
-    description: "Actualiza el nivel de seniority del candidato 'cand_007' a 'Principal Engineer'. Requiere un cuerpo de Petición.",
+    description:
+      "Actualiza el nivel de seniority del candidato 'cand_007' a 'Principal Engineer'. Requiere un cuerpo de Petición.",
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Candidatos",
-    method: 'PUT',
+    method: "PUT",
     endpoint: "/api/candidatos/cand_007/seniority",
     codeSnippet: `
 # Endpoint: PUT /api/candidatos/{candidato_id}/seniority
@@ -115,21 +118,21 @@ db.candidatos.update_one(
   { "id": "cand_007" },
   { "$set": { "seniority": "Principal Engineer" } }
 )
-`
+`,
   },
   {
     title: "Eliminar Candidato cand_049",
     description: "Elimina al candidato con ID 'cand_049' de la base de datos.",
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Candidatos",
-    method: 'DELETE',
+    method: "DELETE",
     endpoint: "/api/candidatos/cand_049",
     codeSnippet: `
 # Endpoint: DELETE /api/candidatos/cand_049
 
 # pymongo
 db.candidatos.delete_one({ "id": "cand_049" })
-`
+`,
   },
   {
     title: "Todos los cursos",
@@ -137,7 +140,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Cursos",
     codeSnippet: `db.cursos.find({})`,
-    endpoint: "/api/cursos"
+    endpoint: "/api/cursos",
   },
   {
     title: "Cursos tipo video",
@@ -145,7 +148,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Cursos",
     codeSnippet: `db.cursos.find({ tipo: "video" })`,
-    endpoint: "/api/cursos/tipo/video"
+    endpoint: "/api/cursos/tipo/video",
   },
   {
     title: "Todas las búsquedas",
@@ -153,7 +156,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Búsquedas",
     codeSnippet: `db.busquedas.find({})`,
-    endpoint: "/api/busquedas"
+    endpoint: "/api/busquedas",
   },
   {
     title: "Búsquedas de la empresa TechSolutions",
@@ -161,7 +164,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Búsquedas",
     codeSnippet: `db.busquedas.find({ empresa: "TechSolutions" })`,
-    endpoint: "/api/busquedas/empresa/TechSolutions"
+    endpoint: "/api/busquedas/empresa/TechSolutions",
   },
   {
     title: "Procesos de selección",
@@ -169,7 +172,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Procesos de Selección",
     codeSnippet: `db.procesos_seleccion.find({})`,
-    endpoint: "/api/procesos_seleccion"
+    endpoint: "/api/procesos_seleccion",
   },
   {
     title: "Procesos de selección de cand_001",
@@ -177,7 +180,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "MongoDB", model: "Documental" },
     category: "Procesos de Selección",
     codeSnippet: `db.procesos_seleccion.find({ candidato_id: "cand_001" })`,
-    endpoint: "/api/procesos_seleccion/candidato/cand_001"
+    endpoint: "/api/procesos_seleccion/candidato/cand_001",
   },
   // Grafo
   {
@@ -186,7 +189,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "Neo4j", model: "Grafo" },
     category: "Cursos y Candidatos",
     codeSnippet: `MATCH (c:Candidato {id: "cand_001"})-[:TOMO]->(cu:Curso) RETURN cu`,
-    endpoint: "/api/candidatos/cand_001/cursos"
+    endpoint: "/api/candidatos/cand_001/cursos",
   },
   {
     title: "Candidatos que tomaron curso_001",
@@ -194,7 +197,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "Neo4j", model: "Grafo" },
     category: "Cursos y Candidatos",
     codeSnippet: `MATCH (c:Candidato)-[:TOMO]->(cu:Curso {id: "curso_001"}) RETURN c`,
-    endpoint: "/api/cursos/curso_001/candidatos"
+    endpoint: "/api/cursos/curso_001/candidatos",
   },
   {
     title: "Red de contactos de cand_001",
@@ -202,7 +205,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "Neo4j", model: "Grafo" },
     category: "Red de Contactos",
     codeSnippet: `MATCH (c:Candidato {id: "cand_001"})-[:CONTACTO]->(otro:Candidato) RETURN otro`,
-    endpoint: "/api/candidatos/cand_001/contactos"
+    endpoint: "/api/candidatos/cand_001/contactos",
   },
   {
     title: "Contactos de 2do Grado de cand_001",
@@ -210,7 +213,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "Neo4j", model: "Grafo" },
     category: "Red de Contactos",
     codeSnippet: `MATCH (c:Candidato {id: "cand_001"})-[:CONTACTO*2..2]->(coc:Candidato) WHERE NOT (c)-[:CONTACTO]->(coc) AND c <> coc RETURN DISTINCT coc`,
-    endpoint: "/api/candidatos/cand_001/contactos-de-contactos"
+    endpoint: "/api/candidatos/cand_001/contactos-de-contactos",
   },
   {
     title: "Búsquedas a las que aplicó cand_001",
@@ -218,7 +221,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "Neo4j", model: "Grafo" },
     category: "Búsquedas y Aplicaciones",
     codeSnippet: `MATCH (c:Candidato {id: "cand_001"})-[:APLICA_A]->(b:Busqueda) RETURN b`,
-    endpoint: "/api/candidatos/cand_001/busquedas"
+    endpoint: "/api/candidatos/cand_001/busquedas",
   },
   {
     title: "Empresas y sus búsquedas",
@@ -226,7 +229,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "Neo4j", model: "Grafo" },
     category: "Búsquedas y Aplicaciones",
     codeSnippet: `MATCH (e:Empresa)-[:PUBLICA]->(b:Busqueda) RETURN e, b`,
-    endpoint: "/api/empresas/busquedas"
+    endpoint: "/api/empresas/busquedas",
   },
   // Clave-valor
   {
@@ -235,7 +238,7 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "Redis", model: "Clave-Valor" },
     category: "Sesiones",
     codeSnippet: `GET cand_001`,
-    endpoint: "/sesion/cand_001"
+    endpoint: "/sesion/cand_001",
   },
   {
     title: "Todas las sesiones activas",
@@ -243,8 +246,51 @@ db.candidatos.delete_one({ "id": "cand_049" })
     dbInfo: { name: "Redis", model: "Clave-Valor" },
     category: "Sesiones",
     codeSnippet: `KEYS *`,
-    endpoint: "/sesiones"
-  }
+    endpoint: "/sesiones",
+  },
+  {
+    title: "Acciones recientes de cand_001",
+    description:
+      "Devuelve la lista de acciones recientes realizadas por el candidato cand_001 en su sesión.",
+    dbInfo: { name: "Redis", model: "Clave-Valor" },
+    category: "Sesiones",
+    codeSnippet: `GET session:cand_001`,
+    endpoint: "/sesion/cand_001",
+  },
+  {
+    title: "Agregar acción a sesión de cand_001",
+    description:
+      "Agrega una nueva acción al historial de acciones recientes de la sesión del candidato cand_001.",
+    dbInfo: { name: "Redis", model: "Clave-Valor" },
+    category: "Sesiones",
+    method: "POST",
+    endpoint: "/sesion/cand_001/action",
+    body: { action_name: "Aplicó a búsqueda 003" },
+  },
+  {
+    title: "Crear sesión para cand_001",
+    description: "Crea una nueva sesión en Redis para el candidato cand_001.",
+    dbInfo: { name: "Redis", model: "Clave-Valor" },
+    category: "Sesiones",
+    method: "POST",
+    endpoint: "/sesion/cand_001",
+    body: {
+      nombre: "cand_001",
+      atributos: {
+        nivel: "Senior",
+      },
+    },
+    codeSnippet: `# Body: { "nombre": "cand_001", "atributos": { "nivel": "Senior" } }`,
+  },
+  {
+    title: "Eliminar sesión de cand_001",
+    description: "Elimina por completo la sesión de cand_001 de Redis.",
+    dbInfo: { name: "Redis", model: "Clave-Valor" },
+    category: "Sesiones",
+    method: "DELETE",
+    endpoint: "/sesion/cand_001",
+    codeSnippet: `DEL session:cand_001`,
+  },
 ];
 
 export default consultas;

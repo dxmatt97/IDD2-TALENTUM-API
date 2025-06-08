@@ -1,7 +1,7 @@
 import networkx as nx
 import random
 from neo4j import GraphDatabase
-from models.documental import generar_candidatos, generar_cursos, generar_busquedas
+from app.models.documental import generar_candidatos, generar_cursos, generar_busquedas
 
 def construir_grafo(candidatos, cursos, n_tomas=10, n_contactos=5):
     """
