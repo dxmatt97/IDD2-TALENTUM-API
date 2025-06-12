@@ -60,7 +60,7 @@ function App() {
     return acc;
   }, {});
   
-  const modelOrder = ['Administración', 'Documental', 'Grafo', 'Clave-Valor'];
+  const modelOrder = ['Administración', 'Documental', 'Grafo', 'Matching Inteligente', 'Clave-Valor'];
   const orderedModels = modelOrder.filter(model => groupedConsultas[model]);
 
 

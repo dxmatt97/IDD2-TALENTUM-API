@@ -1,91 +1,91 @@
 [
   {
     "id": "curso_000",
-    "titulo": "Machine Learning con Scikit-Learn",
-    "tipo": "tutorial interactivo",
+    "titulo": "Backend con Go y Gin",
+    "tipo": "video",
     "contenido": "Contenido detallado y práctico del curso 0..."
   },
   {
     "id": "curso_001",
-    "titulo": "SQL y Optimización de Consultas",
+    "titulo": "Docker & Kubernetes: Guía Completa",
     "tipo": "video",
     "contenido": "Contenido detallado y práctico del curso 1..."
   },
   {
     "id": "curso_002",
-    "titulo": "Microservicios con .NET Core",
+    "titulo": "Metodologías Ágiles y Scrum",
     "tipo": "video",
     "contenido": "Contenido detallado y práctico del curso 2..."
   },
   {
     "id": "curso_003",
-    "titulo": "Introducción a la Inteligencia Artificial",
-    "tipo": "PDF",
+    "titulo": "Ciberseguridad Defensiva",
+    "tipo": "video",
     "contenido": "Contenido detallado y práctico del curso 3..."
   },
   {
     "id": "curso_004",
-    "titulo": "Metodologías Ágiles y Scrum",
-    "tipo": "clase online",
+    "titulo": "Python para Data Science",
+    "tipo": "video",
     "contenido": "Contenido detallado y práctico del curso 4..."
   },
   {
     "id": "curso_005",
-    "titulo": "Docker & Kubernetes: Guía Completa",
-    "tipo": "clase online",
+    "titulo": "Python para Data Science",
+    "tipo": "video",
     "contenido": "Contenido detallado y práctico del curso 5..."
   },
   {
     "id": "curso_006",
-    "titulo": "Java Spring Boot Masterclass",
-    "tipo": "PDF",
+    "titulo": "Desarrollo Web Fullstack",
+    "tipo": "clase online",
     "contenido": "Contenido detallado y práctico del curso 6..."
   },
   {
     "id": "curso_007",
-    "titulo": "Flutter para Desarrollo Móvil",
-    "tipo": "clase online",
+    "titulo": "Docker & Kubernetes: Guía Completa",
+    "tipo": "video",
     "contenido": "Contenido detallado y práctico del curso 7..."
   },
   {
     "id": "curso_008",
-    "titulo": "Bases de Datos NoSQL",
-    "tipo": "PDF",
+    "titulo": "Ciberseguridad Defensiva",
+    "tipo": "tutorial interactivo",
     "contenido": "Contenido detallado y práctico del curso 8..."
   },
   {
     "id": "curso_009",
-    "titulo": "SQL y Optimización de Consultas",
-    "tipo": "PDF",
+    "titulo": "Python para Data Science",
+    "tipo": "clase online",
     "contenido": "Contenido detallado y práctico del curso 9..."
   },
   {
     "id": "curso_010",
-    "titulo": "Desarrollo de APIS con FastAPI",
-    "tipo": "PDF",
+    "titulo": "Flutter para Desarrollo Móvil",
+    "tipo": "clase online",
     "contenido": "Contenido detallado y práctico del curso 10..."
   },
   {
     "id": "curso_011",
-    "titulo": "Java Spring Boot Masterclass",
-    "tipo": "tutorial interactivo",
+    "titulo": "Introducción a la Inteligencia Artificial",
+    "tipo": "PDF",
     "contenido": "Contenido detallado y práctico del curso 11..."
   },
   {
     "id": "curso_012",
-    "titulo": "Python para Data Science",
+    "titulo": "Backend con Go y Gin",
     "tipo": "tutorial interactivo",
     "contenido": "Contenido detallado y práctico del curso 12..."
   },
   {
     "id": "curso_013",
-    "titulo": "Microservicios con .NET Core",
+    "titulo": "Desarrollo de APIS con FastAPI",
     "tipo": "PDF",
     "contenido": "Contenido detallado y práctico del curso 13..."
   },
   {
     "id": "curso_014",
-    "titulo": "Backend con Go y Gin",
+    "titulo": "Introducción a la Inteligencia Artificial",
     "tipo": "video",
     "contenido": "Contenido detallado y práctico del curso 14..."
   }

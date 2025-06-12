@@ -204,17 +204,14 @@ def get_matching_candidatos(busqueda_id: str):
 
     # Si no está en caché, ejecutar la consulta en Neo4j
     query = """
-        // 1. Encontrar la búsqueda y recolectar sus requisitos
         MATCH (b:Busqueda {id: $busqueda_id})-[:REQUIERE_TECNOLOGIA]->(req_skill:Tecnologia)
         WITH b, collect(req_skill) AS required_skills
         MATCH (b)-[:REQUIERE_IDIOMA]->(req_lang:Idioma)
         WITH b, required_skills, collect(req_lang) AS required_languages
-
-        // 2. Encontrar todos los candidatos que aún no han aplicado
+        
         MATCH (c:Candidato)
         WHERE NOT (c)-[:APLICA_A]->(b)
 
-        // 3. Calcular coincidencias de skills para cada candidato
         CALL {
             WITH c, required_skills
             UNWIND required_skills AS req_skill
@@ -222,7 +219,6 @@ def get_matching_candidatos(busqueda_id: str):
             RETURN count(req_skill) AS skill_matches
         }
 
-        // 4. Calcular coincidencias de idiomas para cada candidato
         CALL {
             WITH c, required_languages
             UNWIND required_languages AS req_lang
@@ -230,9 +226,7 @@ def get_matching_candidatos(busqueda_id: str):
             RETURN count(req_lang) AS lang_matches
         }
 
-        // 5. Calcular puntaje final y ordenar
         WITH c, skill_matches, lang_matches,
-             // Evitar división por cero si no hay requisitos
              toFloat(skill_matches) / size(required_skills) AS skill_score,
              toFloat(lang_matches) / size(required_languages) AS lang_score
         WHERE skill_matches > 0 // Requisito mínimo: al menos un skill en común

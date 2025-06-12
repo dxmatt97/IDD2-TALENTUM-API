@@ -2,7 +2,7 @@ const consultas = [
   // Administración
   {
     title: "Poblar MongoDB",
-    description: "Ejecuta un script para limpiar y poblar la base de datos de MongoDB con datos de prueba. Devuelve el log de la operación.",
+    description: "Genera datos maestros (Candidatos, Cursos, etc.) y los guarda en MongoDB. Actúa como la 'única fuente de verdad' y también exporta los datos a archivos JSON para que otros sistemas los consuman.",
     endpoint: "/api/admin/populate-mongo",
     method: "POST",
     dbInfo: { name: "MongoDB", model: "Administración" },
@@ -36,7 +36,7 @@ def poblar_mongo():
   },
   {
     title: "Poblar Neo4j",
-    description: "Ejecuta un script para limpiar y poblar la base de datos de Neo4j con un grafo de prueba. Devuelve el log de la operación.",
+    description: "Lee los datos desde los archivos JSON (generados por el script de MongoDB) y construye un grafo de relaciones en Neo4j, asegurando la consistencia entre las bases de datos.",
     endpoint: "/api/admin/populate-neo4j",
     method: "POST",
     dbInfo: { name: "Neo4j", model: "Administración" },
@@ -64,6 +64,35 @@ def poblar_neo4j():
         "status": "success",
         "counts": { ... }
     }
+`
+  },
+  {
+    title: "Poblar Redis",
+    description: "Ejecuta un script para conectar a MongoDB y Redis. Lee los IDs de los candidatos existentes y genera dinámicamente datos de sesión de prueba para un subconjunto de ellos en Redis. Devuelve el log de la operación.",
+    endpoint: "/api/admin/populate-redis",
+    method: "POST",
+    dbInfo: { name: "Redis", model: "Administración" },
+    category: "Administración",
+    codeSnippet: `
+# utils/clave_valor/poblar_redis.py
+
+def populate_redis():
+    # 1. Conectar a Redis y MongoDB
+    r = redis.from_url(...)
+    db = get_mongo_db()
+
+    # 2. Obtener IDs de candidatos de Mongo
+    candidate_ids = [c["id"] for c in db.candidatos.find()]
+    
+    # 3. Limpiar Redis
+    r.flushdb()
+
+    # 4. Generar y crear sesiones dinámicamente
+    for cid in random.sample(candidate_ids, 15):
+        session_data = generate_random_session(cid)
+        r.set(f"session:{cid}", json.dumps(session_data))
+
+    return { "status": "success", ... }
 `
   },
   // Documental
@@ -106,6 +135,7 @@ def poblar_neo4j():
     category: "Candidatos",
     method: 'PUT',
     endpoint: "/api/candidatos/cand_007/seniority",
+    body: { "seniority": "Principal Engineer" },
     codeSnippet: `
 # Endpoint: PUT /api/candidatos/{candidato_id}/seniority
 # Body: { "seniority": "Principal Engineer" }
@@ -228,22 +258,116 @@ db.candidatos.delete_one({ "id": "cand_049" })
     codeSnippet: `MATCH (e:Empresa)-[:PUBLICA]->(b:Busqueda) RETURN e, b`,
     endpoint: "/api/empresas/busquedas"
   },
-  // Clave-valor
   {
-    title: "Sesión de cand_001",
-    description: "Sesión almacenada para cand_001.",
+    title: "Matching Inteligente para Búsqueda",
+    description: "Encuentra los 10 mejores candidatos para la búsqueda 'busq_005'. Los resultados se cachean en Redis por 5 minutos. La primera ejecución consulta la BD (lento), las siguientes leen del caché (rápido).",
+    dbInfo: { name: "Neo4j / Redis", model: "Grafo / Caché" },
+    category: "Matching Inteligente",
+    endpoint: "/api/busquedas/busq_005/match-candidatos",
+    codeSnippet: `
+# api.py
+@app.get("/api/busquedas/{id}/match-candidatos")
+def get_matching_candidatos(busqueda_id: str):
+    cache_key = f"cache:matching:{busqueda_id}"
+    cached_result = redis_client.get(cache_key)
+
+    if cached_result:
+        return { "source": "cache", ... }
+
+    # ... Si no, consultar Neo4j ...
+    
+    redis_client.setex(cache_key, 300, result_json)
+    return { "source": "database", ... }
+`
+  },
+  // Clave-Valor
+  {
+    title: "Todas las Sesiones",
+    description: "Obtiene todas las claves de sesión y sus datos desde Redis.",
     dbInfo: { name: "Redis", model: "Clave-Valor" },
-    category: "Sesiones",
-    codeSnippet: `GET cand_001`,
-    endpoint: "/sesion/cand_001"
+    category: "Sesiones (Clave-Valor)",
+    endpoint: "/sesiones",
+    codeSnippet: `
+# FastAPI Endpoint
+@app.get("/sesiones")
+def get_todas_sesiones():
+    all_sessions = []
+    # Usamos SCAN para no bloquear el servidor
+    for key in redis_client.scan_iter("session:*"):
+        session_data = redis_client.get(key)
+        # ...
+    return all_sessions
+`
   },
   {
-    title: "Todas las sesiones activas",
-    description: "Lista de todas las sesiones activas.",
+    title: "Sesión del Candidato cand_001",
+    description: "Obtiene los datos de sesión para un candidato específico desde Redis.",
     dbInfo: { name: "Redis", model: "Clave-Valor" },
-    category: "Sesiones",
-    codeSnippet: `KEYS *`,
-    endpoint: "/sesiones"
+    category: "Sesiones (Clave-Valor)",
+    endpoint: "/sesion/cand_001",
+    codeSnippet: `
+# FastAPI Endpoint
+@app.get("/sesion/{candidato_id}")
+def get_sesion_candidato(candidato_id: str):
+    session_data = redis_client.get(f"session:{candidato_id}")
+    if session_data is None:
+        raise HTTPException(status_code=404, detail="Sesión no encontrada")
+    return json.loads(session_data)
+`
+  },
+  {
+    title: "Logout Candidato (Borrar Sesión)",
+    description: "Elimina la clave de sesión de un candidato en Redis. Esto también registrará una acción en la lista de acciones recientes.",
+    dbInfo: { name: "Redis", model: "Clave-Valor" },
+    category: "Sesiones (Clave-Valor)",
+    method: 'DELETE',
+    endpoint: "/sesion/cand_001",
+    codeSnippet: `
+# api.py
+@app.delete("/sesion/{candidato_id}")
+def delete_sesion_candidato(candidato_id: str):
+    session_key = f"session:{candidato_id}"
+    deleted_count = redis_client.delete(session_key)
+    # ...
+    log_recent_action(...)
+    return {"message": "Sesión eliminada."}
+`
+  },
+  {
+    title: "Añadir Acción a Sesión",
+    description: "Añade una acción a la lista de 'recent_actions' para la sesión del 'cand_001'. Requiere un cuerpo de petición.",
+    dbInfo: { name: "Redis", model: "Clave-Valor" },
+    category: "Sesiones (Clave-Valor)",
+    method: 'POST',
+    endpoint: "/sesion/cand_001/action",
+    body: { action_name: "reviewed_job_offer" },
+    codeSnippet: `
+# Endpoint: POST /sesion/cand_001/action
+# Body: { "action_name": "reviewed_job_offer" }
+
+# api.py
+@app.post("/sesion/{id}/action")
+def add_action_a_sesion(candidato_id: str, action: Action):
+    # ...
+    session_data["recent_actions"].append(...)
+    redis_client.set(session_key, json.dumps(session_data))
+    # ...
+`
+  },
+  {
+    title: "Ver Acciones Globales Recientes",
+    description: "Obtiene una lista de las últimas 10 acciones importantes que han ocurrido en la plataforma (ej: updates, deletes, logins).",
+    dbInfo: { name: "Redis", model: "Clave-Valor" },
+    category: "Acciones Recientes (Cache)",
+    endpoint: "/api/actions/recent",
+    codeSnippet: `
+# api.py
+@app.get("/api/actions/recent")
+def get_recent_actions():
+    key = "global:recent_actions"
+    recent_actions = redis_client.lrange(key, 0, 9)
+    return {"recent_actions": recent_actions}
+`
   }
 ];
 

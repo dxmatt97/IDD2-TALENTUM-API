@@ -1,7 +1,6 @@
 import random
 from datetime import datetime, timedelta
 
-# --- Listas de datos ampliadas para mayor variedad ---
 NOMBRES = [
     "Juan Pérez", "María García", "Carlos López", "Ana Fernández", "Lucía Martínez",
     "Pedro Gómez", "Sofía Díaz", "Martín Torres", "Valentina Romero", "Diego Ruiz",
@@ -38,9 +37,6 @@ BENEFICIOS = [
     "Horario flexible", "Clases de inglés", "OSDE 310", "Vacaciones extendidas"
 ]
 
-# -----------------------------
-# Modelo Documental: Candidatos, Cursos, Búsquedas
-# -----------------------------
 def generar_candidatos(n=50):
     return [
         {
@@ -86,7 +82,6 @@ def generar_busquedas(n=20):
     ]
 
 def candidatos_con_skill(candidatos, skill):
-    """Devuelve candidatos que tengan el skill técnico dado."""
     return [c for c in candidatos if skill in c['skills_tecnicos']]
 
 def generar_procesos_seleccion_documental(n=50):
